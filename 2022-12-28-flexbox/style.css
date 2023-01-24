@@ -1,0 +1,34 @@
+.blue {
+  background-color: blue;
+  order: 1;
+}
+
+.green {
+  background-color: green;
+  align-self: flex-start;
+}
+
+.red {
+  background-color: red;
+}
+
+.child {
+  height: 100px;
+  width: 100px;
+}
+
+.container {
+  background-color: #c0c0c0;
+  height: 500px;
+  width: 500px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  justify-content: space-between;
+
+  align-items: center;
+}

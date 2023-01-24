@@ -1,0 +1,26 @@
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(154, 154, 154);
+
+  position: relative;
+}
+
+.child {
+  /* width: 150px; */
+  /* height: 150px; */
+  height: 100%;
+  width: 100%;
+  background-color: blueviolet;
+
+  position: absolute;
+  /* top: 50%; */
+  right: -25px;
+  bottom: -25px; 
+
+  /* right: 0; */
+  /* bottom: 0; */
+
+  /* transform: translate(-50%, -50%); */
+  /* transform: translateY(-50%); */
+}

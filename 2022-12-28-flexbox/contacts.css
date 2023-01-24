@@ -1,0 +1,53 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  column-gap: 30px;
+}
+
+.shops-wrapper {
+  width: 50%
+}
+
+.shops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.shop {
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  width: calc((100% - 15px) / 2);
+  padding: 15px;
+}
+
+ul.shop-address-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.shop-address-title {
+  font-weight: 700;
+}
+
+ul.shop-address-list a {
+  text-decoration: none;
+}
+
+.map-wrapper {
+  width: 50%
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  display: block;
+}
