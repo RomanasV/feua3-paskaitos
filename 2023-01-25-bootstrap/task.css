@@ -1,0 +1,19 @@
+.custom-carousel img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.custom-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.custom-card-image {
+  height: 200px;
+  object-fit: cover;
+}
