@@ -1,0 +1,104 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.shops-wrapper {
+  width: 100%
+}
+
+.shops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.shop {
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 15px;
+}
+
+ul.shop-address-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.shop-address-title {
+  font-weight: 700;
+}
+
+ul.shop-address-list a {
+  text-decoration: none;
+}
+
+.map-wrapper {
+  width: 100%;
+  order: -10;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  display: block;
+}
+
+@media screen and (min-width: 450px) {
+  .shop {
+    width: calc((100% - 15px) / 2);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .content-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .shops-wrapper {
+    width: 50%;
+  }
+  
+  .shop {
+    width: 100%;
+  }
+
+  .map-wrapper {
+    width: 50%;
+    order: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .shops-wrapper {
+    width: 60%;
+  }
+
+  .shop {
+    width: calc((100% - 15px) / 2);
+  }
+
+  .map-wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .shops-wrapper {
+    width: 100%;
+  }
+
+  .map-wrapper {
+    width: 100%;
+  }
+}
