@@ -4,6 +4,7 @@
   --color-black: black;
   --color-dark: rgb(48, 48, 48);
   --color-white: white;
+
   --spacing-small: 15px;
   --spacing-medium: 30px;
   --spacing-large: 45px;
@@ -41,7 +42,7 @@
 .wrapper h2.color-red {
   color: var(--color-red);
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
+  transition: color .5s ease-in-out;
 }
 
 .wrapper h2.color-red:hover {
@@ -56,8 +57,9 @@
 .wrapper p.empty::before {
   content: none;
 } */
+
 .wrapper p:not(.empty)::before {
-  content: "- ";
+  content: '- ';
   color: var(--color-red);
 }
 
@@ -74,4 +76,4 @@
 .container {
   width: 70%;
   margin: var(--spacing-medium) auto;
-}/*# sourceMappingURL=style.css.map */
+}
