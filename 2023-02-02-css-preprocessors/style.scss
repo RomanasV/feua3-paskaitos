@@ -1,27 +1,23 @@
 $color-red: red;
-
-:root {
-  --color-green: green;
-  --color-black: black;
-  --color-dark: rgb(48, 48, 48);
-  --color-white: white;
-
-  --spacing-small: 15px;
-  --spacing-medium: 30px;
-  --spacing-large: 45px;
-}
+$color-black: black;
+$color-dark: rgb(48, 48, 48);
+$color-white: white;
+$color-green: green;
+$spacing-small: 15px;
+$spacing-medium: 30px;
+$spacing-large: 45px;
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 .bg-dark {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: $color-black;
+  color: $color-white;
 }
 
 .wrapper {
-  padding: var(--spacing-medium);
+  padding: $spacing-medium;
 
   &.full-width {
     width: 100%;
@@ -31,50 +27,58 @@ $color-red: red;
     width: 50%;
   }
 
+  &.bg-dark {
+    background-color: $color-dark;
+  }
+
   h2 {
     font-size: 40px;
+
+    &.color-red {
+      color: $color-red;
+      cursor: pointer;
+      transition: color .5s ease-in-out;
+
+      &:hover {
+        color: $color-green;
+      }
+    }
+  }
+
+  // p {
+  //   &::before {
+  //     content: '- ';
+  //     color: $color-red;
+  //   }
+
+  //   &.empty {
+  //     &::before {
+  //       content: none;
+  //     }
+  //   }
+  // }
+
+  p {
+    &:not(.empty) {
+      &::before {
+        content: '- ';
+        color: $color-red;
+      }
+    }
+
+    &:first-of-type {
+      font-size: 1.5em;
+    }
   }
 }
 
-.wrapper.bg-dark {
-  background-color: var(--color-dark);
-}
-
-.wrapper h2.color-red {
-  color: $color-red;
-  cursor: pointer;
-  transition: color .5s ease-in-out;
-}
-
-.wrapper h2.color-red:hover {
-  color: var(--color-green);
-}
-
-/* .wrapper p::before {
-  content: '- ';
-  color: $color-red;
-}
-
-.wrapper p.empty::before {
-  content: none;
-} */
-
-.wrapper p:not(.empty)::before {
-  content: '- ';
-  color: $color-red;
-}
-
-.wrapper p:first-of-type {
-  font-size: 1.5em;
-}
-
 .box {
-  border: 2px solid var(--color-green);
-  padding: var(--spacing-medium);
-  margin-bottom: var(--spacing-medium);
+  border: 2px solid $color-green;
+  padding: $spacing-medium;
+  margin-bottom: $spacing-medium;
 }
 
 .container {
   width: 70%;
-  margin: var(--spacing-medium) auto;
+  margin: $spacing-medium auto;
 }
