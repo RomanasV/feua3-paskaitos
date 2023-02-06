@@ -1,5 +1,4 @@
 :root {
-  --color-red: red;
   --color-green: green;
   --color-black: black;
   --color-dark: rgb(48, 48, 48);
@@ -21,25 +20,22 @@
 .wrapper {
   padding: var(--spacing-medium);
 }
-
 .wrapper.full-width {
   width: 100%;
 }
-
 .wrapper.half-width {
   width: 50%;
+}
+.wrapper h2 {
+  font-size: 40px;
 }
 
 .wrapper.bg-dark {
   background-color: var(--color-dark);
 }
 
-.wrapper h2 {
-  font-size: 40px;
-}
-
 .wrapper h2.color-red {
-  color: var(--color-red);
+  color: red;
   cursor: pointer;
   transition: color 0.5s ease-in-out;
 }
@@ -50,7 +46,7 @@
 
 /* .wrapper p::before {
   content: '- ';
-  color: var(--color-red);
+  color: $color-red;
 }
 
 .wrapper p.empty::before {
@@ -58,7 +54,7 @@
 } */
 .wrapper p:not(.empty)::before {
   content: "- ";
-  color: var(--color-red);
+  color: red;
 }
 
 .wrapper p:first-of-type {
