@@ -1,3 +1,25 @@
+$width-xl: 999px;
+$width-md: 799px;
+$width-sm: 649px;
+
+@mixin xl {
+  @media (max-width: $width-xl) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $width-md) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: $width-sm) {
+    @content;
+  }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -59,20 +81,16 @@ a {
 .section-title {
   font-size: 40px;
 
-  @media screen and (max-width: 649px) {
-    .section-title {
-      font-size: 30px;
-    }
+  @include sm {
+    font-size: 30px;
   }
 }
 
 .sub-title {
   font-size: 30px;
 
-  @media screen and (max-width: 649px) {
-    .sub-title {
-      font-size: 24px;
-    }
+  @include sm {
+    font-size: 24px;
   }
 }
 
@@ -89,18 +107,18 @@ a {
   display: flex;
   column-gap: 30px;
 
-  @media screen and (max-width: 799px) {
+  @include md {
     flex-wrap: wrap;
   }
 
   .main-content {
     width: 65%;
 
-    @media screen and (max-width: 999px) {
+    @include xl {
       width: 60%;
     }
 
-    @media screen and (max-width: 799px) {
+    @include md {
       width: 100%;
     }
 
@@ -109,30 +127,30 @@ a {
       gap: 30px;
       margin-bottom: 30px;
 
-      @media screen and (max-width: 999px) {
+      @include xl {
         flex-wrap: wrap;
       }
 
-      @media screen and (max-width: 799px) {
+      @include md {
         flex-wrap: nowrap;
       }
 
-      @media screen and (max-width: 649px) {
+      @include sm {
         flex-wrap: wrap;
       }
 
       .news-article {
         background-color: white;
 
-        @media screen and (max-width: 999px) {
+        @include xl {
           width: 100%;
         }
 
-        @media screen and (max-width: 799px) {
+        @include md {
           width: 50%;
         }
 
-        @media screen and (max-width: 649px) {
+        @include sm {
           width: 100%;
         }
 
@@ -166,15 +184,15 @@ a {
       .news-article {
         width: calc((100% - 30px) / 2);
 
-        @media screen and (max-width: 999px) {
+        @include xl {
           width: 100%;
         }
 
-        @media screen and (max-width: 799px) {
+        @include md {
           width: calc((100% - 30px) / 2);
         }
         
-        @media screen and (max-width: 649px) {
+        @include sm {
           width: 100%;
         }
 
@@ -208,18 +226,18 @@ a {
   .sidebar-content {
     width: 35%;
 
-    @media screen and (max-width: 999px) {
+    @include xl {
       width: 40%;
     }
 
-    @media screen and (max-width: 799px) {
+    @include md {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
     }
 
-    @media screen and (max-width: 649px) {
+    @include sm {
       grid-template-columns: 1fr;
     }
 
