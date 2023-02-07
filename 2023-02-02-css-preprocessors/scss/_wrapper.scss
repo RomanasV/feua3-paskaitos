@@ -1,0 +1,63 @@
+@use 'variables/spacing';
+@use 'variables/colors';
+@use 'responsive';
+
+.wrapper {
+  padding: spacing.$medium;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.half-width {
+    width: 50%;
+
+    @include responsive.md {
+      width: 100%;
+    }
+  }
+
+  &.bg-dark {
+    background-color: colors.$dark;
+  }
+
+  h2 {
+    font-size: 40px;
+
+    &.color-red {
+      color: colors.$red;
+      cursor: pointer;
+      transition: color .5s ease-in-out;
+
+      &:hover {
+        color: colors.$green;
+      }
+    }
+  }
+
+  // p {
+  //   &::before {
+  //     content: '- ';
+  //     color: colors.$red;
+  //   }
+
+  //   &.empty {
+  //     &::before {
+  //       content: none;
+  //     }
+  //   }
+  // }
+
+  p {
+    &:not(.empty) {
+      &::before {
+        content: '- ';
+        color: colors.$red;
+      }
+    }
+
+    &:first-of-type {
+      font-size: 1.5em;
+    }
+  }
+}

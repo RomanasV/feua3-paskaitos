@@ -16,6 +16,11 @@
 .wrapper.half-width {
   width: 50%;
 }
+@media (max-width: 750px) {
+  .wrapper.half-width {
+    width: 100%;
+  }
+}
 .wrapper.bg-dark {
   background-color: rgb(48, 48, 48);
 }
@@ -38,13 +43,13 @@
   font-size: 1.5em;
 }
 
+.container {
+  width: 70%;
+  margin: 30px auto;
+}
+
 .box {
   border: 2px solid green;
   padding: 30px;
   margin-bottom: 30px;
-}
-
-.container {
-  width: 70%;
-  margin: 30px auto;
 }/*# sourceMappingURL=style.css.map */
