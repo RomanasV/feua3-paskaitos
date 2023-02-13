@@ -36,3 +36,35 @@ console.log('John Doe (amžius 25 m.), asmens kodas: 37878787878, gyvenamasis mi
 console.log(vardas + ' ' + pavarde + ' (amžius ' + amzius + ' m.), asmens kodas: ' + asmensKodas + ', gyvenamasis miestas: ' + miestas + '.');
 
 console.log(vardas + " " + pavarde + " (amžius " + amzius + " m.), asmens kodas: " + asmensKodas + ", gyvenamasis miestas: " + miestas + ".");
+
+console.log(`${vardas} ${pavarde} (amžius ${amzius} m.), asmens kodas: ${asmensKodas}, gyvenamasis miestas: ${miestas}.`);
+
+// John said: "Good morning".
+console.log('John said: "Good morning".');
+console.log(`John said: "Good morning".`);
+console.log("John said: \"Good morning\".");
+
+// That's my car.
+console.log("That's my car.");
+console.log(`That's my car.`);
+console.log('That\'s my car.');
+
+// John said: "That's my car".
+console.log(`John said: "That's my car".`);
+console.log('John said: "That\'s my car".');
+console.log("John said: \"That's my car\".");
+
+// John `said`: "That's my car".
+console.log('John `said`: "That\'s my car".');
+console.log("John `said`: \"That's my car\".");
+console.log(`John \`said\`: "That's my car".`);
+
+// John `said`: "That's \my\ car".
+console.log('John `said`: "That\'s \\my\\ car".');
+console.log("John `said`: \"That's \\my\\ car\".");
+console.log(`John \`said\`: "That's \\my\\ car".`);
+
+// John \`said\`: "That's my car".
+console.log('John \\`said\\`: "That\'s my car".');
+console.log("John \\`said\\`: \"That's my car\".");
+console.log(`John \\\`said\\\`: "That's my car".`);
