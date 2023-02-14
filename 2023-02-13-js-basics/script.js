@@ -1,3 +1,5 @@
+console.groupCollapsed('JavaScript Basics');
+
 // Kintamojo sukūrimas:
 // 1. Iniciavimo žodelis (var, let, const)
 // 2. Kintamojo pavadinimas
@@ -68,3 +70,66 @@ console.log(`John \`said\`: "That's \\my\\ car".`);
 console.log('John \\`said\\`: "That\'s my car".');
 console.log("John \\`said\\`: \"That's my car\".");
 console.log(`John \\\`said\\\`: "That's my car".`);
+
+// Matematiniai operatoriai
+let num1 = 22;
+let num2 = 10;
+let num3 = '10';
+
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 * num2);
+console.log(num1 / num2);
+console.log(num1 % num2);
+
+console.log(num1 + num3);
+console.log(num1 - num3);
+console.log(num1 * num3);
+console.log(num1 / num3);
+console.log(num1 % num3);
+
+console.log(num1 + num2 * num2);
+console.log((num1 + num2) * num2);
+
+// SĄLYGOS
+
+// Dviguba lygybė (loosely Equal ==): tikrina tik reikšmes. Ir nekreipia dėmesio į duomenų tipą. 
+console.log(10 == 10); // true
+console.log('vienas' == 'vienas'); // true
+console.log('10' == '10'); // true
+console.log(10 == '10'); // true
+
+// Triguba lygybė (strictly equal ===): pirmiausiai tikrina duomenų tipą ir tik jeigu duomenų tipas sutampa, tada tikrina jų reikšmes.
+
+console.log(10 === 10); // true
+console.log('vienas' === 'vienas'); // true
+console.log('10' === '10'); // true
+console.log(10 === '10'); // false
+
+console.log(10 > 10); // false
+console.log(10 >= 10); // true
+console.log(10 < 10); // false
+console.log(10 <= 10); // true
+
+console.log(10 != 10); // false
+console.log(10 !== 10); // false
+
+console.log(true); // true
+console.log(!true); // false
+console.log(!!true) // true
+
+console.groupEnd();
+
+// IF, ELSE IF, ELSE
+
+let light = 'asdasdasd';
+
+if (light === 'green') {
+  console.log('Galima eiti');
+} else if (light === 'yellow') {
+  console.log('Pasiruošk');
+} else if (light === 'red') {
+  console.log('STOP');
+} else {
+  console.log('Sugedo');
+} 
