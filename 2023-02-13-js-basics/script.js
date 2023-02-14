@@ -122,7 +122,7 @@ console.groupEnd();
 
 // IF, ELSE IF, ELSE
 
-let light = 'asdasdasd';
+let light = 'green';
 
 if (light === 'green') {
   console.log('Galima eiti');
@@ -133,3 +133,58 @@ if (light === 'green') {
 } else {
   console.log('Sugedo');
 } 
+
+
+let age = 17;
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age > 17) {
+//   console.log('Pirkti galima');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age < 18) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima');
+// }
+
+// if (age <= 17) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima');
+// }
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else if (age >= 16) {
+//   console.log('Pirkti galima su tėvų sutikimu');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else if (age < 16) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima su tėvų sutikimu');
+// }
+
+if (age > 120) {
+  console.log('Amžius per didelis');
+} else if (age >= 18) {
+  console.log('Pirkti galima');
+} else if (age >= 16) {
+  console.log('Pirkti galima su tėvų sutikimu');
+} else if (age < 0) {
+  console.log('Amžius yra per mažas');
+} else {
+  console.log('Pirkti negalima');
+}
