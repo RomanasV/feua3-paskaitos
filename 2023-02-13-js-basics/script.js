@@ -296,5 +296,72 @@ let correctAnswer11 = 579;
 // Kaip vadinasi arčiausiai Žemės esanti Žvaigždė? sun
 let correctAnswer12 = 'sun';
 
-let playerAnswer11 = 555;
-let playerAnswer12 = 'moon';
+let playerAnswer11 = 579;
+let playerAnswer12 = 'sun';
+
+// if (correctAnswer11 === playerAnswer11 || correctAnswer12 === playerAnswer12) {
+  
+//   if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+//     console.log('Patekai: abu teisingi.');
+//   } else if (correctAnswer11 === playerAnswer11) {
+//     console.log('Patekai: antras neteisingas.')
+//   } else {
+//     console.log('Patekai: pirmas neteisingas');
+//   }
+
+// } else {
+//   console.log('Nepatekai: abu neteisingi.')
+// }
+
+if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+  console.log('Patekai: abu teisingi.');
+} else if (correctAnswer11 === playerAnswer11) {
+  console.log('Patekai: antras neteisingas.')
+} else if (correctAnswer12 === playerAnswer12) {
+  console.log('Patekai: pirmas neteisingas');
+} else {
+  console.log('Nepatekai: abu neteisingi.')
+}
+
+
+let correctAnswer21 = 1;
+let correctAnswer22 = 1;
+
+let playerAnswer21 = 1;
+let playerAnswer22 = 0;
+
+if (correctAnswer21 === playerAnswer21 && correctAnswer22 === playerAnswer22) {
+  console.log('Patekai: abu teisingi.');
+} else if (correctAnswer21 === playerAnswer21) {
+  console.log('Nepatekai: pirmas teisingas.')
+} else if (correctAnswer22 === playerAnswer22) {
+  console.log('Nepatekai: antras teisingas');
+} else {
+  console.log('Nepatekai: abu neteisingi.')
+}
+
+let correctAnswer31 = 1;
+let correctAnswer32 = 1;
+let correctAnswer33 = 1;
+
+let playerAnswer31 = 0;
+let playerAnswer32 = 0;
+let playerAnswer33 = 0;
+
+if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+  console.log('Patekai: visi atakymai teisingi.');
+} else if (correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+  console.log('Patekai: bet pirmas neteisingas.');
+} else if (correctAnswer31 === playerAnswer31 && correctAnswer33 === playerAnswer33) {
+  console.log('Patekai: bet antras neteisingas.');
+} else if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32) {
+  console.log('Patekai: bet trečias neteisingas.');
+} else if (correctAnswer31 === playerAnswer31) {
+  console.log('Nepatekai: bet pirmas teisingas.');
+} else if (correctAnswer32 === playerAnswer32) {
+  console.log('Nepatekai: bet antras teisingas.');
+} else if (correctAnswer33 === playerAnswer33) {
+  console.log('Nepatekai: bet trečias teisingas.');
+} else {
+  console.log('Nepatekai: visi neteisingi :(');
+}
