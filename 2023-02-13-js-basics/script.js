@@ -420,3 +420,25 @@ let isLoggedIn = false;
 let personName = 'John';
 let time = 4;
 let isBirthday = false;
+
+
+
+
+// APRAŠYMAS:
+// Sukurti aprašymą apie asmenį pagal pateiktus kintamuosius ir punktus:
+// 1. Jeigu asmuo yra vyras, tai naudoti žodžius he/his, jeigu moteris, tai naudoti žodžius she/her.
+// 2. Jeigu nenurodyta asmens pavardė arba vardas, tai tekste turėtų būti naudojami tik nurodyti duomenys. Jeigu nenurodytas nei vardas, nei pavardė, tada tekste reikėtų naudoti žodį person.
+// 3. Jeigu asmuo yra pilnametis, tai tekste turi būti įvardintas jo darbas (pJob kintamasis).
+// 3.1. Jeigu pJob kintamasis neturi reikšmės, tai tekste reikėtų įvardinti jog asmuo yra bedarbis.
+// 3.2. Jeigu asmuo yra nepilnametis, tai tekste panaudoti pJob kintamąjį nurodant kuo asmuo norėtų būti užaugęs.
+// 3.3. Jeigu asmuo yra nepilnametis ir kintamasis pJob neturi reikšmės, tai tekste įvardinti jog asmuo dar neturi planų kuo bus užaugęs.
+
+// Pavyzdiniai tekstai:
+// „John Doe is 20 years old. He is a Designer."
+// „John Doe is 10 years old. He is still in school and his dream is to become a Designer."
+
+let pName = 'John';
+let pSurname = 'Doe';
+let pAge = 20;
+let pJob = 'Developer';
+let pGender = 'male';
