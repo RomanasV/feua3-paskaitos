@@ -340,28 +340,83 @@ if (correctAnswer21 === playerAnswer21 && correctAnswer22 === playerAnswer22) {
   console.log('Nepatekai: abu neteisingi.')
 }
 
+// let correctAnswer31 = 1;
+// let correctAnswer32 = 1;
+// let correctAnswer33 = 1;
+
+// let playerAnswer31 = 1;
+// let playerAnswer32 = 0;
+// let playerAnswer33 = 1;
+
+// let answer3 = '';
+
+// if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   answer3 = 'Patekai: visi atakymai teisingi.';
+// } else if (correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   answer3 = 'Patekai: bet pirmas neteisingas.';
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer33 === playerAnswer33) {
+//   answer3 = 'Patekai: bet antras neteisingas.';
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32) {
+//   answer3 = 'Patekai: bet trečias neteisingas.';
+// } else if (correctAnswer31 === playerAnswer31) {
+//   answer3 = 'Nepatekai: bet pirmas teisingas.';
+// } else if (correctAnswer32 === playerAnswer32) {
+//   answer3 = 'Nepatekai: bet antras teisingas.';
+// } else if (correctAnswer33 === playerAnswer33) {
+//   answer3 = 'Nepatekai: bet trečias teisingas.';
+// } else {
+//   answer3 = 'Nepatekai: visi neteisingi :(';
+// }
+
+// console.log(answer3);
+
 let correctAnswer31 = 1;
 let correctAnswer32 = 1;
 let correctAnswer33 = 1;
 
 let playerAnswer31 = 0;
 let playerAnswer32 = 0;
-let playerAnswer33 = 0;
+let playerAnswer33 = 1;
 
-if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
-  console.log('Patekai: visi atakymai teisingi.');
-} else if (correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
-  console.log('Patekai: bet pirmas neteisingas.');
-} else if (correctAnswer31 === playerAnswer31 && correctAnswer33 === playerAnswer33) {
-  console.log('Patekai: bet antras neteisingas.');
-} else if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32) {
-  console.log('Patekai: bet trečias neteisingas.');
-} else if (correctAnswer31 === playerAnswer31) {
-  console.log('Nepatekai: bet pirmas teisingas.');
-} else if (correctAnswer32 === playerAnswer32) {
-  console.log('Nepatekai: bet antras teisingas.');
-} else if (correctAnswer33 === playerAnswer33) {
-  console.log('Nepatekai: bet trečias teisingas.');
+let answer1 = correctAnswer31 === playerAnswer31;
+let answer2 = correctAnswer32 === playerAnswer32;
+let answer3 = correctAnswer33 === playerAnswer33;
+
+console.log(answer1);
+
+let output3 = '';
+
+if (answer1 && answer2 && answer3) {
+  output3 = 'Patekai: visi atakymai teisingi.';
+} else if (answer2 && answer3) {
+  output3 = 'Patekai: bet pirmas neteisingas.';
+} else if (answer1 && answer3) {
+  output3 = 'Patekai: bet antras neteisingas.';
+} else if (answer1 && answer2) {
+  output3 = 'Patekai: bet trečias neteisingas.';
+} else if (answer1) {
+  output3 = 'Nepatekai: bet pirmas teisingas.';
+} else if (answer2) {
+  output3 = 'Nepatekai: bet antras teisingas.';
+} else if (answer3) {
+  output3 = 'Nepatekai: bet trečias teisingas.';
 } else {
-  console.log('Nepatekai: visi neteisingi :(');
+  output3 = 'Nepatekai: visi neteisingi :(';
 }
+
+console.log(output3);
+
+
+// Pasisveikinimas
+// 1. Jeigu vartotojas prisijungęs (true/false), tai prie pasisveikinimo reikia prirašyti jo vardą, pvz. „Good Morning, Tom.".
+// 2. Jeigu vartotojas nėra prisijungęs, tai išvesti tik tekstą „Good Morning...".
+// 3. Priklausomai nuo paros laiko, pasisveikinimas turėtų būti skirtingas:
+// 3.1. 5-12 val. „Good Morning"
+// 3.2. 13-18 val. „Good Afternoon"
+// 3.3. 19-4 val. „Good Evening"
+// 4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
+
+let isLoggedIn = false;
+let personName = 'John';
+let time = 4;
+let isBirthday = false;
