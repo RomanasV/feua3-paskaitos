@@ -238,3 +238,63 @@ if (password.length < 16) {
     console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.');
   }
 }
+
+let personAge = 19;
+
+// Pagal amžiu surašyti į kurią klasė eina mokinys:
+// 1. Iki 6 metų į mokyklą neina.
+// 2. 7-10 metų eina į pradinę klasę.
+// 3. 11-14 metų eina į pagrindinę.
+// 4. 15-18 metų eina į gimnaziją.
+// 5. 19+ mokyklą baigė.
+
+// 6.1. Jeigu amžius yra mažiau nei 0, tai parašyti jog įvestas amžius yra per mažas.
+// 6.2. Jeigu amžius yra daugau nei 120, tai parašyti jog įvestas amžius yra per didelis.
+
+// 7.1. Jeigu amžius yra 6 metai, tai parašyti: "Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas."
+// 7.2. Jeigu amžius yra 10 metai, tai parašyti: "Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas."
+// 7.3. Jeigu amžius yra 14 metai, tai parašyti: "Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas."
+// 7.3. Jeigu amžius yra 18 metai, tai parašyti: "Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs."
+
+if (personAge < 0) {
+  console.log('Amžius yra per mažas');
+} else if (personAge < 6) {
+  console.log('Į mokyklą neina');
+} else if (personAge < 7) {
+  console.log('Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.');
+} else if (personAge < 10) {
+  console.log('Pradinukas');
+} else if (personAge < 11) {
+  console.log('Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.');
+} else if (personAge < 14) {
+  console.log('Pagrindinė');
+} else if (personAge < 15) {
+  console.log('Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.');
+} else if (personAge < 18) {
+  console.log('Gimnazija');
+} else if (personAge < 19) {
+  console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.');
+} else if (personAge < 120) {
+  console.log('Mokyklą baigė');
+} else {
+  console.log('Amžius yra per didelis');
+}
+
+
+// UŽDUOTIS: sukurti galvosūkį su keletu klausimu
+// PIRMAS LYGIS:
+// 1. Norint patekti į kitą lygį, reikia atsakyti bent į vieną klausimą iš dviejų:
+// 2. Jeigu atsakytas tik vienas klausimas, tai papildomai reikia parašyti kuris klausimas buvo neteisingas.
+
+// 1. Patekai i kita lygi: abu atsakymai teisingi.
+// 2. Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.
+// 3. Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.
+// 4. Nepatekai i kita lygi: abu atsakymai buvo neteisingi.
+
+// Kiek bus 123 + 456 = 579
+let correctAnswer11 = 579;
+// Kaip vadinasi arčiausiai Žemės esanti Žvaigždė? sun
+let correctAnswer12 = 'sun';
+
+let playerAnswer11 = 555;
+let playerAnswer12 = 'moon';
