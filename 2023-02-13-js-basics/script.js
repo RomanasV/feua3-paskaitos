@@ -416,10 +416,110 @@ console.log(output3);
 // 3.3. 19-4 val. „Good Evening"
 // 4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
 
-let isLoggedIn = false;
-let personName = 'John';
-let time = 4;
-let isBirthday = false;
+// let isLoggedIn = true;
+// let personName = '';
+// let time = 156165161;
+// let isBirthday = true;
+
+// if (time > 4 && time <= 12) {
+
+//   if (isLoggedIn) {
+
+//     if (isBirthday) {
+//       console.log('Good Morning, ' + personName + ' and have a great birthday!');
+//     } else {
+//       console.log('Good Morning, ' + personName);
+//     }
+
+//   } else {
+//     console.log('Good Morning');
+//   }
+
+// } else if (time > 12 && time <= 18) {
+
+//   if (isLoggedIn) {
+
+//     if (isBirthday) {
+//       console.log('Good Afternoon, ' + personName + ' and have a great birthday!');
+//     } else {
+//       console.log('Good Afternoon, ' + personName);
+//     }
+
+//   } else {
+//     console.log('Good Afternoon');
+//   }
+
+// } else if (time > 18 && time < 24 || time >= 0 && time <= 4) {
+
+//   if (isLoggedIn) {
+
+//     if (isBirthday) {
+//       console.log('Good Evening, ' + personName + ' and have a great birthday!');
+//     } else {
+//       console.log('Good Evening, ' + personName);
+//     }
+
+//   } else {
+//     console.log('Good Evening');
+//   }
+
+// } else {
+
+//   if (isLoggedIn) {
+
+//     if (isBirthday) {
+//       console.log('Hello, ' + personName + ' and have a great birthday!');
+//     } else {
+//       console.log('Hello, ' + personName);
+//     }
+    
+//   } else {
+//     console.log('Hello');
+//   }
+
+// }
+
+let isLoggedIn = true;
+let personName = '';
+let time = 15;
+let isBirthday = true;
+
+let timeOutput = '';
+let nameOutput = '';
+let birthdayOutput = '';
+
+if (time > 4 && time <= 12) {
+  timeOutput = 'Good Morning';
+} else if (time > 12 && time <= 18) {
+  timeOutput = 'Good Afternoon';
+} else if (time > 18 && time < 24 || time >= 0 && time <= 4) {
+  timeOutput = 'Good Evening';
+} else {
+  timeOutput = 'Hello';
+}
+
+if (isLoggedIn && personName) {
+  nameOutput = ', ' + personName;
+}
+
+if (isLoggedIn && isBirthday) {
+  birthdayOutput = ' and have a great birthday!';
+}
+
+let output = timeOutput + nameOutput + birthdayOutput;
+
+console.log(output);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
