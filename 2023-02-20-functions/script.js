@@ -11,16 +11,16 @@
 // 9. 10 ilgis ir 60 plotis.
 // 10. 10 ilgis ir 120 plotis.
 
-console.log('- Perimetras: ' + (10 + 10) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 25) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 30) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 35) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 40) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 45) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 50) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 55) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 60) * 2 + ' m.');
-console.log('- Perimetras: ' + (10 + 120) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 10) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 25) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 30) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 35) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 40) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 45) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 50) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 55) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 60) * 2 + ' m.');
+// console.log('- Perimetras: ' + (10 + 120) * 2 + ' m.');
 
 // DRY - Don't Repeat Yourself
 
@@ -48,3 +48,21 @@ function helloWithName(personName, personSurname) {
 helloWithName('John', 'Doe');
 helloWithName('Steve', 'Doe');
 helloWithName('Peter', 'Doe');
+
+function perimeter(height, width, units) {
+  let answer = (height + width) * 2;
+  let output = `Perimeter: ${answer} ${units}`;
+  console.log(output);
+}
+
+perimeter(10, 10, 'km.');
+perimeter(10, 15, 'km.');
+perimeter(10, 20, 'km.');
+perimeter(10, 25, 'km.');
+perimeter(10, 30, 'km.');
+perimeter(10, 35, 'm.');
+perimeter(10, 50, 'm.');
+perimeter(10, 55, 'm.');
+perimeter(10, 70, 'm.');
+perimeter(10, 100, 'cm.');
+perimeter(1654654, 465632, 'cm.');
