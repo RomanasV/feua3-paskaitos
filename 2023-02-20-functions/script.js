@@ -66,3 +66,108 @@ perimeter(10, 55, 'm.');
 perimeter(10, 70, 'm.');
 perimeter(10, 100, 'cm.');
 perimeter(1654654, 465632, 'cm.');
+
+
+// Užduotis 1:
+// 1. Sukurti funkciją, kuri skaičiuotų stačiakampis plotą.
+// 2. Funkcija turi priimti du argumentus (ilgį ir plotį).
+// 3. Funkcija turi grąžinti tekstą: „Stačiakampio plotas yra 10 kv. vnt."
+// 4. Į konsolę išvesti šios funkcijos rezultatą.
+
+function rectArea(height, width, units) {
+  // Pirmas būdas
+  // let unitsText = 'vnt';
+  // if (units !== '' && units !== undefined) {
+  //   unitsText = units;
+  // }
+
+  // Antras būdas
+  // let unitsText = units;
+  // if (units === '' || units === undefined) {
+  //   unitsText = 'vnt';
+  // }
+
+  // Trečias
+  // let unitsText;
+  // if (units === '' || units === undefined) {
+  //   unitsText = 'vnt';
+  // } else {
+  //   unitsText = units;
+  // }
+
+  // Ketvirtas
+  // let unitsText = 'vnt';
+  // if (units) {
+  //   unitsText = units;
+  // }
+
+  // Penktas būdas
+  let unitsText = units ? units : 'vnt';
+
+  let answer = height * width;
+  let output = `Stačiakampio plotas yra ${answer} kv. ${unitsText}.`;
+  console.log(output);
+}
+
+rectArea(10, 15, 'cm');
+rectArea(10, 20, 'm');
+rectArea(30, 40, '');
+rectArea(30, 45);
+
+// Užduotis 2:
+// Atlikti tą patį kaip ir pirmoje užduotyje, tačiau apskaičiuoti stačiojo trikampio plotą.
+
+function triangleArea(height = 0, width = 0, units = 'vnt') {
+  // if (height && width) {
+  //   let answer = height * width / 2;
+  //   let output = `Stačiojo trikampio plotas yra ${answer} kv. ${units}.`;
+  //   console.log(output);
+  // } else {
+  //   console.log('Neteisingai nurodyti duomenys');
+  // }
+
+  let answer = height * width / 2;
+  let output = `Stačiojo trikampio plotas yra ${answer} kv. ${units}.`;
+  console.log(output);
+}
+
+triangleArea(10, 15, 'cm');
+triangleArea(10, 20, 'm');
+// triangleArea(30, 40, '');
+triangleArea(30, 45);
+triangleArea(30);
+triangleArea();
+
+// Užduotis 3:
+// Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
+function allAreas(figureHeight = 0, figureWidth = 0, units = 'vnt') {
+  console.log('-----');
+  rectArea(figureHeight, figureWidth, units);
+  triangleArea(figureHeight, figureWidth, units);
+}
+
+allAreas(10, 15, 'cm');
+allAreas(10, 20, 'm');
+allAreas(30, 40, '');
+allAreas(30, 45);
+
+
+
+function streetLight(originalLight) {
+  let light = originalLight.toLowerCase();
+
+  if (light === 'green') {
+    console.log('Galima eiti!');
+  } else if (light === 'yellow') {
+    console.log('Pasiruošk');
+  } else if (light === 'red') {
+    console.log('STOP');
+  } else {
+    console.log('Sugedo');
+  } 
+}
+
+streetLight('green');
+streetLight('Red');
+streetLight('YELLOW');
+streetLight('blue');
