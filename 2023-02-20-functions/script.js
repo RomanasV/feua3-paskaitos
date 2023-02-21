@@ -168,6 +168,180 @@ function streetLight(originalLight) {
 }
 
 streetLight('green');
+
+
 streetLight('Red');
 streetLight('YELLOW');
 streetLight('blue');
+
+
+function checkAge(age) {
+  if (age < 0) {
+    console.log('Amžius yra per mažas');
+  } else if (age >= 0 && age < 16) {
+    console.log('Pirki negalima');
+  } else if (age >= 16 && age < 18) {
+    console.log('Pirkti galima su tėvų sutikimu');
+  } else if (age >= 18 && age <= 120) {
+    console.log('Pirkti galima');
+  } else {
+    console.log('Amžius per didelis');
+  }
+}
+
+checkAge(15);
+checkAge(25);
+checkAge(17);
+checkAge(150);
+checkAge(-50);
+
+
+function checkPassword(originalPassword) {
+  let password = originalPassword.trimStart().trimEnd().replaceAll(' ', '');
+  
+  if (password.length < 16) {
+    console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
+  } else {
+    if (password.includes('#') === false) {
+      console.log('Slaptažodyje privalo būti grotažymės (#)');
+    } else if (password.length > 20) {
+      console.log('Slaptažodis tinkamas');
+    } else {
+      console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.');
+    }
+  }
+}
+
+checkPassword('a#sdasdjhaksljdhaksdh');
+checkPassword('a#sdasd');
+checkPassword('aaskdjalksjdlsdasd');
+
+function ageStatus(age) {
+  if (age < 0) {
+    console.log('Amžius yra per mažas');
+  } else if (age < 6) {
+    console.log('Į mokyklą neina');
+  } else if (age < 7) {
+    console.log('Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.');
+  } else if (age < 10) {
+    console.log('Pradinukas');
+  } else if (age < 11) {
+    console.log('Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.');
+  } else if (age < 14) {
+    console.log('Pagrindinė');
+  } else if (age < 15) {
+    console.log('Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.');
+  } else if (age < 18) {
+    console.log('Gimnazija');
+  } else if (age < 19) {
+    console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.');
+  } else if (age < 120) {
+    console.log('Mokyklą baigė');
+  } else {
+    console.log('Amžius yra per didelis');
+  }
+}
+
+ageStatus(15);
+ageStatus(6);
+ageStatus(-50);
+ageStatus(20);
+ageStatus(200);
+
+function greeting(time, isLoggedIn, personName, isBirthday) {
+  let timeOutput = '';
+  let nameOutput = '';
+  let birthdayOutput = '';
+  
+  if (time > 4 && time <= 12) {
+    timeOutput = 'Good Morning';
+  } else if (time > 12 && time <= 18) {
+    timeOutput = 'Good Afternoon';
+  } else if (time > 18 && time < 24 || time >= 0 && time <= 4) {
+    timeOutput = 'Good Evening';
+  } else {
+    timeOutput = 'Hello';
+  }
+  
+  if (isLoggedIn && personName) {
+    nameOutput = ', ' + personName;
+  }
+  
+  if (isLoggedIn && isBirthday) {
+    birthdayOutput = ' and have a great birthday!';
+  }
+  
+  let output = timeOutput + nameOutput + birthdayOutput;
+  
+  console.log(output);
+}
+
+greeting(10, true, 'John', false);
+greeting(3, true, 'John', true);
+greeting(18, false, 'John', true);
+
+
+// function gameLevel1(playerAnswer11, playerAnswer12) {
+//   // Kiek bus 123 + 456 = 579
+//   let correctAnswer11 = 579;
+//   // Kaip vadinasi arčiausiai Žemės esanti Žvaigždė? sun
+//   let correctAnswer12 = 'sun';
+
+//   if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+//     console.log('Patekai: abu teisingi.');
+//   } else if (correctAnswer11 === playerAnswer11) {
+//     console.log('Patekai: antras neteisingas.')
+//   } else if (correctAnswer12 === playerAnswer12) {
+//     console.log('Patekai: pirmas neteisingas');
+//   } else {
+//     console.log('Nepatekai: abu neteisingi.')
+//   }
+// }
+
+// gameLevel1(155, 'moon');
+// gameLevel1(579, 'sun');
+// gameLevel1(579, 'moon');
+
+
+
+function gameLevel1() {
+  let correctAnswer11 = 579;
+  let correctAnswer12 = 'sun';
+
+  let playerAnswer11 = prompt('1 lygis, 1 klausimas: kiek bus 123 + 456?');
+  let playerAnswer12 = prompt('1 lygis, 2 klausimas: kaip vadinasi arčiausiai Žemės esanti Žvaigždė?');
+
+  if (correctAnswer11 == playerAnswer11 && correctAnswer12 == playerAnswer12) {
+    alert('Patekai: abu teisingi.');
+    gameLevel2();
+  } else if (correctAnswer11 == playerAnswer11) {
+    alert('Patekai: antras neteisingas.');
+    gameLevel2();
+  } else if (correctAnswer12 == playerAnswer12) {
+    alert('Patekai: pirmas neteisingas');
+    gameLevel2();
+  } else {
+    alert('Nepatekai: abu neteisingi.');
+  }
+}
+
+gameLevel1();
+
+function gameLevel2() {  
+  let correctAnswer21 = 1;
+  let correctAnswer22 = 1;
+
+  let playerAnswer21 = prompt('2 lygis, 1 klausimas: .....');
+  let playerAnswer22 = prompt('2 lygis, 2 klausimas: .....');
+
+  if (correctAnswer21 == playerAnswer21 && correctAnswer22 == playerAnswer22) {
+    alert('Patekai: abu teisingi.');
+  } else if (correctAnswer21 == playerAnswer21) {
+    alert('Nepatekai: pirmas teisingas.');
+  } else if (correctAnswer22 == playerAnswer22) {
+    alert('Nepatekai: antras teisingas');
+  } else {
+    alert('Nepatekai: abu neteisingi.');
+  }
+}
+
