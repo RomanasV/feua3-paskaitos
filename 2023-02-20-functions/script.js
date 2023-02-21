@@ -32,40 +32,47 @@
 // 4. Riestiniai skliaustai {} - funkcijos apibrėžimas
 
 function hello() {
-  console.log('Sveikas');
+  return 'Sveikas';
 }
 
 // Funkcijos iškvietimas:
 // 1. Funkcijos pavadinimas
 // 2. Paprasti skliaustai
-hello();
+
+console.log(hello());
+document.querySelector('h1').textContent = hello();
+
+let helloText = hello();
+console.log(helloText);
 
 function helloWithName(personName, personSurname) {
+  // return 'Hello, ' + personName + ' ' + personSurname + '.';
+  
   let text = 'Hello, ' + personName + ' ' + personSurname + '.';
-  console.log(text);
+  return text;
 }
 
-helloWithName('John', 'Doe');
-helloWithName('Steve', 'Doe');
-helloWithName('Peter', 'Doe');
+console.log(helloWithName('Steve', 'Doe'));
+document.querySelector('h1').textContent = helloWithName('John', 'Doe');
+console.log(helloWithName('Peter', 'Doe'));
 
 function perimeter(height, width, units) {
   let answer = (height + width) * 2;
   let output = `Perimeter: ${answer} ${units}`;
-  console.log(output);
+  return output;
 }
 
-perimeter(10, 10, 'km.');
-perimeter(10, 15, 'km.');
-perimeter(10, 20, 'km.');
-perimeter(10, 25, 'km.');
-perimeter(10, 30, 'km.');
-perimeter(10, 35, 'm.');
-perimeter(10, 50, 'm.');
-perimeter(10, 55, 'm.');
-perimeter(10, 70, 'm.');
-perimeter(10, 100, 'cm.');
-perimeter(1654654, 465632, 'cm.');
+console.log(perimeter(10, 10, 'km.'));
+console.log(perimeter(10, 15, 'km.'));
+// perimeter(10, 20, 'km.');
+// perimeter(10, 25, 'km.');
+// perimeter(10, 30, 'km.');
+// perimeter(10, 35, 'm.');
+// perimeter(10, 50, 'm.');
+// perimeter(10, 55, 'm.');
+// perimeter(10, 70, 'm.');
+// perimeter(10, 100, 'cm.');
+// perimeter(1654654, 465632, 'cm.');
 
 
 // Užduotis 1:
@@ -109,10 +116,10 @@ function rectArea(height, width, units) {
   console.log(output);
 }
 
-rectArea(10, 15, 'cm');
-rectArea(10, 20, 'm');
-rectArea(30, 40, '');
-rectArea(30, 45);
+// rectArea(10, 15, 'cm');
+// rectArea(10, 20, 'm');
+// rectArea(30, 40, '');
+// rectArea(30, 45);
 
 // Užduotis 2:
 // Atlikti tą patį kaip ir pirmoje užduotyje, tačiau apskaičiuoti stačiojo trikampio plotą.
@@ -131,12 +138,12 @@ function triangleArea(height = 0, width = 0, units = 'vnt') {
   console.log(output);
 }
 
-triangleArea(10, 15, 'cm');
-triangleArea(10, 20, 'm');
+// triangleArea(10, 15, 'cm');
+// triangleArea(10, 20, 'm');
 // triangleArea(30, 40, '');
-triangleArea(30, 45);
-triangleArea(30);
-triangleArea();
+// triangleArea(30, 45);
+// triangleArea(30);
+// triangleArea();
 
 // Užduotis 3:
 // Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
@@ -146,10 +153,10 @@ function allAreas(figureHeight = 0, figureWidth = 0, units = 'vnt') {
   triangleArea(figureHeight, figureWidth, units);
 }
 
-allAreas(10, 15, 'cm');
-allAreas(10, 20, 'm');
-allAreas(30, 40, '');
-allAreas(30, 45);
+// allAreas(10, 15, 'cm');
+// allAreas(10, 20, 'm');
+// allAreas(30, 40, '');
+// allAreas(30, 45);
 
 
 
@@ -167,12 +174,10 @@ function streetLight(originalLight) {
   } 
 }
 
-streetLight('green');
-
-
-streetLight('Red');
-streetLight('YELLOW');
-streetLight('blue');
+// streetLight('green');
+// streetLight('Red');
+// streetLight('YELLOW');
+// streetLight('blue');
 
 
 function checkAge(age) {
@@ -189,11 +194,11 @@ function checkAge(age) {
   }
 }
 
-checkAge(15);
-checkAge(25);
-checkAge(17);
-checkAge(150);
-checkAge(-50);
+// checkAge(15);
+// checkAge(25);
+// checkAge(17);
+// checkAge(150);
+// checkAge(-50);
 
 
 function checkPassword(originalPassword) {
@@ -212,9 +217,9 @@ function checkPassword(originalPassword) {
   }
 }
 
-checkPassword('a#sdasdjhaksljdhaksdh');
-checkPassword('a#sdasd');
-checkPassword('aaskdjalksjdlsdasd');
+// checkPassword('a#sdasdjhaksljdhaksdh');
+// checkPassword('a#sdasd');
+// checkPassword('aaskdjalksjdlsdasd');
 
 function ageStatus(age) {
   if (age < 0) {
@@ -242,11 +247,11 @@ function ageStatus(age) {
   }
 }
 
-ageStatus(15);
-ageStatus(6);
-ageStatus(-50);
-ageStatus(20);
-ageStatus(200);
+// ageStatus(15);
+// ageStatus(6);
+// ageStatus(-50);
+// ageStatus(20);
+// ageStatus(200);
 
 function greeting(time, isLoggedIn, personName, isBirthday) {
   let timeOutput = '';
@@ -276,9 +281,9 @@ function greeting(time, isLoggedIn, personName, isBirthday) {
   console.log(output);
 }
 
-greeting(10, true, 'John', false);
-greeting(3, true, 'John', true);
-greeting(18, false, 'John', true);
+// greeting(10, true, 'John', false);
+// greeting(3, true, 'John', true);
+// greeting(18, false, 'John', true);
 
 
 // function gameLevel1(playerAnswer11, playerAnswer12) {
@@ -325,7 +330,7 @@ function gameLevel1() {
   }
 }
 
-gameLevel1();
+// gameLevel1();
 
 function gameLevel2() {  
   let correctAnswer21 = 1;
@@ -336,6 +341,7 @@ function gameLevel2() {
 
   if (correctAnswer21 == playerAnswer21 && correctAnswer22 == playerAnswer22) {
     alert('Patekai: abu teisingi.');
+    gameLevel3();
   } else if (correctAnswer21 == playerAnswer21) {
     alert('Nepatekai: pirmas teisingas.');
   } else if (correctAnswer22 == playerAnswer22) {
@@ -345,3 +351,70 @@ function gameLevel2() {
   }
 }
 
+function gameLevel3() {
+  let correctAnswer31 = 1;
+  let correctAnswer32 = 1;
+  let correctAnswer33 = 1;
+  
+  let playerAnswer31 = prompt('3 lygis, 1 klausimas: .....');
+  let playerAnswer32 = prompt('3 lygis, 2 klausimas: .....');
+  let playerAnswer33 = prompt('3 lygis, 3 klausimas: .....');
+  
+  let answer1 = correctAnswer31 == playerAnswer31;
+  let answer2 = correctAnswer32 == playerAnswer32;
+  let answer3 = correctAnswer33 == playerAnswer33;
+  
+  if (answer1 && answer2 && answer3) {
+    alert('Patekai: visi atakymai teisingi.');
+    gameLevel4();
+  } else if (answer2 && answer3) {
+    alert('Patekai: bet pirmas neteisingas.');
+    gameLevel4();
+  } else if (answer1 && answer3) {
+    alert('Patekai: bet antras neteisingas.');
+    gameLevel4();
+  } else if (answer1 && answer2) {
+    alert('Patekai: bet trečias neteisingas.');
+    gameLevel4();
+  } else if (answer1) {
+    alert('Nepatekai: bet pirmas teisingas.');
+  } else if (answer2) {
+    alert('Nepatekai: bet antras teisingas.');
+  } else if (answer3) {
+    alert('Nepatekai: bet trečias teisingas.');
+  } else {
+    alert('Nepatekai: visi neteisingi :(');
+  }
+}
+
+function gameLevel4() {
+  let correctAnswer31 = 1;
+  let correctAnswer32 = 1;
+  let correctAnswer33 = 1;
+  
+  let playerAnswer31 = prompt('4 lygis, 1 klausimas: .....');
+  let playerAnswer32 = prompt('4 lygis, 2 klausimas: .....');
+  let playerAnswer33 = prompt('4 lygis, 3 klausimas: .....');
+  
+  let answer1 = correctAnswer31 == playerAnswer31;
+  let answer2 = correctAnswer32 == playerAnswer32;
+  let answer3 = correctAnswer33 == playerAnswer33;
+  
+  if (answer1 && answer2 && answer3) {
+    alert('Sveikiname, laimėjai!')
+  } else if (answer2 && answer3) {
+    alert('Nelaimėjai: bet antras ir trečias buvo teisingi.')
+  } else if (answer1 && answer3) {
+    alert('Nelaimėjai: bet pirmas ir trečias buvo teisingas.')
+  } else if (answer1 && answer2) {
+    alert('laimėjai: bet pirmas ir antras buvo teisingas.')
+  } else if (answer1) {
+    alert('Nelaimėjai: bet pirmas teisingas.')
+  } else if (answer2) {
+    alert('Nelaimėjai: bet antras teisingas.')
+  } else if (answer3) {
+    alert('Nelaimėjai: bet trečias teisingas.')
+  } else {
+    alert('Nelaimėjai: visi neteisingi :(')
+  }
+}
