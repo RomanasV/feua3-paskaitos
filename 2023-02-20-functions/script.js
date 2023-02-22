@@ -113,11 +113,11 @@ function rectArea(height, width, units) {
 
   let answer = height * width;
   let output = `Stačiakampio plotas yra ${answer} kv. ${unitsText}.`;
-  console.log(output);
+  return output;
 }
 
-// rectArea(10, 15, 'cm');
-// rectArea(10, 20, 'm');
+console.log(rectArea(10, 15, 'cm'));
+console.log(rectArea(10, 20, 'm'));
 // rectArea(30, 40, '');
 // rectArea(30, 45);
 
@@ -128,126 +128,213 @@ function triangleArea(height = 0, width = 0, units = 'vnt') {
   // if (height && width) {
   //   let answer = height * width / 2;
   //   let output = `Stačiojo trikampio plotas yra ${answer} kv. ${units}.`;
-  //   console.log(output);
+  //   return output;
   // } else {
-  //   console.log('Neteisingai nurodyti duomenys');
+  //   return 'Neteisingai nurodyti duomenys';
   // }
 
   let answer = height * width / 2;
   let output = `Stačiojo trikampio plotas yra ${answer} kv. ${units}.`;
-  console.log(output);
+  return output;
 }
 
-// triangleArea(10, 15, 'cm');
+console.log(triangleArea(10, 15, 'cm'));
 // triangleArea(10, 20, 'm');
 // triangleArea(30, 40, '');
 // triangleArea(30, 45);
 // triangleArea(30);
-// triangleArea();
+console.log(triangleArea());
 
 // Užduotis 3:
 // Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
 function allAreas(figureHeight = 0, figureWidth = 0, units = 'vnt') {
   console.log('-----');
-  rectArea(figureHeight, figureWidth, units);
-  triangleArea(figureHeight, figureWidth, units);
+  let rectText = rectArea(figureHeight, figureWidth, units);
+  let triangleText = triangleArea(figureHeight, figureWidth, units);
+  let output = rectText + ' ' + triangleText;
+
+  return output;
 }
 
-// allAreas(10, 15, 'cm');
+console.log(allAreas(10, 15, 'cm'));
 // allAreas(10, 20, 'm');
 // allAreas(30, 40, '');
 // allAreas(30, 45);
 
 
 
+// function streetLight(originalLight) {
+//   let light = originalLight.toLowerCase();
+
+//   if (light === 'green') {
+//     return 'Galima eiti!';
+//   } else if (light === 'yellow') {
+//     return 'Pasiruošk';
+//   } else if (light === 'red') {
+//     return 'STOP';
+//   } else {
+//     return 'Sugedo';
+//   }
+// }
+
+// function streetLight(originalLight) {
+//   let light = originalLight.toLowerCase();
+
+//   if (light === 'green') {
+//     return 'Galima eiti!';
+//   }
+  
+//   if (light === 'yellow') {
+//     return 'Pasiruošk';
+//   }
+  
+//   if (light === 'red') {
+//     return 'STOP';
+//   }
+  
+//   return 'Sugedo';
+// }
+
 function streetLight(originalLight) {
   let light = originalLight.toLowerCase();
 
-  if (light === 'green') {
-    console.log('Galima eiti!');
-  } else if (light === 'yellow') {
-    console.log('Pasiruošk');
-  } else if (light === 'red') {
-    console.log('STOP');
-  } else {
-    console.log('Sugedo');
-  } 
+  if (light === 'green') return 'Galima eiti!';
+  if (light === 'yellow') return 'Pasiruošk';
+  if (light === 'red') return 'STOP';
+  
+  return 'Sugedo';
 }
 
-// streetLight('green');
-// streetLight('Red');
-// streetLight('YELLOW');
-// streetLight('blue');
+console.log(streetLight('green'));
+console.log(streetLight('Red'));
+console.log(streetLight('YELLOW'));
+console.log(streetLight('blue'));
 
+
+// function checkAge(age) {
+//   if (age < 0) {
+//     return 'Amžius yra per mažas';
+//   } else if (age >= 0 && age < 16) {
+//     return 'Pirki negalima';
+//   } else if (age >= 16 && age < 18) {
+//     return 'Pirkti galima su tėvų sutikimu';
+//   } else if (age >= 18 && age <= 120) {
+//     return 'Pirkti galima';
+//   } else {
+//     return 'Amžius per didelis';
+//   }
+// }
 
 function checkAge(age) {
   if (age < 0) {
-    console.log('Amžius yra per mažas');
-  } else if (age >= 0 && age < 16) {
-    console.log('Pirki negalima');
-  } else if (age >= 16 && age < 18) {
-    console.log('Pirkti galima su tėvų sutikimu');
-  } else if (age >= 18 && age <= 120) {
-    console.log('Pirkti galima');
-  } else {
-    console.log('Amžius per didelis');
-  }
+    return 'Amžius yra per mažas';
+  } 
+  
+  if (age >= 0 && age < 16) {
+    return 'Pirki negalima';
+  } 
+  
+  if (age >= 16 && age < 18) {
+    return 'Pirkti galima su tėvų sutikimu';
+  } 
+  
+  if (age >= 18 && age <= 120) {
+    return 'Pirkti galima';
+  } 
+  
+  return 'Amžius per didelis';
 }
 
-// checkAge(15);
-// checkAge(25);
+console.log(checkAge(15));
+console.log(checkAge(25));
 // checkAge(17);
 // checkAge(150);
 // checkAge(-50);
 
 
+// function checkPassword(originalPassword) {
+//   let password = originalPassword.trimStart().trimEnd().replaceAll(' ', '');
+  
+//   if (password.length < 16) {
+//     return 'Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.';
+//   } else {
+//     if (password.includes('#') === false) {
+//       return 'Slaptažodyje privalo būti grotažymės (#)';
+//     } else if (password.length > 20) {
+//       return 'Slaptažodis tinkamas';
+//     } else {
+//       return 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.';
+//     }
+//   }
+// }
+
 function checkPassword(originalPassword) {
   let password = originalPassword.trimStart().trimEnd().replaceAll(' ', '');
   
   if (password.length < 16) {
-    console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
-  } else {
-    if (password.includes('#') === false) {
-      console.log('Slaptažodyje privalo būti grotažymės (#)');
-    } else if (password.length > 20) {
-      console.log('Slaptažodis tinkamas');
-    } else {
-      console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.');
-    }
+    return 'Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.';
   }
+
+  if (!password.includes('#')) {
+    return 'Slaptažodyje privalo būti grotažymės (#)';
+  } 
+  
+  if (password.length > 20) {
+    return 'Slaptažodis tinkamas';
+  } 
+  
+  return 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.';
 }
 
-// checkPassword('a#sdasdjhaksljdhaksdh');
+console.log(checkPassword('a#sdasdjhaksljdhaksdh'));
 // checkPassword('a#sdasd');
 // checkPassword('aaskdjalksjdlsdasd');
 
 function ageStatus(age) {
   if (age < 0) {
-    console.log('Amžius yra per mažas');
-  } else if (age < 6) {
-    console.log('Į mokyklą neina');
-  } else if (age < 7) {
-    console.log('Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.');
-  } else if (age < 10) {
-    console.log('Pradinukas');
-  } else if (age < 11) {
-    console.log('Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.');
-  } else if (age < 14) {
-    console.log('Pagrindinė');
-  } else if (age < 15) {
-    console.log('Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.');
-  } else if (age < 18) {
-    console.log('Gimnazija');
-  } else if (age < 19) {
-    console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.');
-  } else if (age < 120) {
-    console.log('Mokyklą baigė');
-  } else {
-    console.log('Amžius yra per didelis');
-  }
+    return 'Amžius yra per mažas';
+  } 
+  
+  if (age < 6) {
+    return 'Į mokyklą neina';
+  } 
+  
+  if (age < 7) {
+    return 'Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.';
+  } 
+  
+  if (age < 10) {
+    return 'Pradinukas';
+  } 
+  
+  if (age < 11) {
+    return 'Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.';
+  } 
+  
+  if (age < 14) {
+    return 'Pagrindinė';
+  } 
+  
+  if (age < 15) {
+    return 'Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.';
+  } 
+  
+  if (age < 18) {
+    return 'Gimnazija';
+  } 
+  
+  if (age < 19) {
+    return 'Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.';
+  } 
+  
+  if (age < 120) {
+    return 'Mokyklą baigė';
+  } 
+  
+  return 'Amžius yra per didelis';
 }
 
-// ageStatus(15);
+console.log(ageStatus(15));
 // ageStatus(6);
 // ageStatus(-50);
 // ageStatus(20);
@@ -278,10 +365,10 @@ function greeting(time, isLoggedIn, personName, isBirthday) {
   
   let output = timeOutput + nameOutput + birthdayOutput;
   
-  console.log(output);
+  return output;
 }
 
-// greeting(10, true, 'John', false);
+console.log(greeting(10, true, 'John', false));
 // greeting(3, true, 'John', true);
 // greeting(18, false, 'John', true);
 
