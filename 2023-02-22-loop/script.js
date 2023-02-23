@@ -147,7 +147,7 @@ function task12(start = 100, end = 1, nth = 1) {
   }
 }
 
-task12(500, 470, 2);
+// task12(500, 470, 2);
 
 function task22() {
   for (let i = 100; i >= 1; i--) {
@@ -229,3 +229,152 @@ let num = 5;
 
 // str += '.';
 // console.log(str);
+
+// FIZZ BUZZ
+// 1. Skaičius nuo 1 iki 100.
+// 2. Skaičiai, kurie dalinasi iš 3 turi būti pakeisti į žodį „Fizz";
+// 3. Skaičiai, kurie dalinasi iš 5 turi būti pakeisti į žodį „Buzz";
+// 4. Skaičiai, kurie dalinasi iš 3 ir 5 turi būti pakeisti į žodį „FizzBuzz";
+// 5. Skaičiai, kurie dalinasi iš 7, turi būti pakeisti į žodį „Biff".
+
+// 6. Skaičiai, kurie dalinasi iš 9, turi būti pakeisti į žodį „Fuzz".
+
+
+function fizzBuzz1() {
+  for (let i = 1; i <= 1000; i++) {
+    if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0 && i % 9) {
+      console.log('FizzBuzzBiffFuzz');
+    } else if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0) {
+      console.log('FizzBuzzBiff');
+    } else if (i % 3 === 0 && i % 5 === 0 && i % 9 === 0) {
+      console.log('FizzBuzzFuzz');
+    } else if (i % 5 === 0 && i % 7 === 0 && i % 9 === 0) {
+      console.log('BuzzBiffFuzz');
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      console.log('FizzBuzz');
+    } else if (i % 3 === 0 && i % 7 === 0) {
+      console.log('FizzBiff');
+    } else if (i % 3 === 0 && i % 9 === 0) {
+      console.log('FizzFuzz');
+    } else if (i % 5 === 0 && i % 7 === 0) {
+      console.log('BuzzBiff');
+    } else if (i % 5 === 0 && i % 9 === 0) {
+      console.log('BuzzFuzz');
+    } else if (i % 7 === 0 && i % 9 === 0) {
+      console.log('BiffFuzz');
+    } else if (i % 3 === 0) {
+      console.log('Fizz');
+    } else if (i % 5 === 0) {
+      console.log('Buzz');
+    } else if (i % 7 === 0) {
+      console.log('Biff');
+    } else if (i % 9 === 0) {
+      console.log('Fuzz');
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+// fizzBuzz1();
+
+
+function fizzBuzz2() {
+  for (let i = 1; i <= 1000; i++) {
+    let output = '';
+
+    if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0 && i % 9) {
+      output = 'FizzBuzzBiffFuzz';
+    } else if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0) {
+      output = 'FizzBuzzBiff';
+    } else if (i % 3 === 0 && i % 5 === 0 && i % 9 === 0) {
+      output = 'FizzBuzzFuzz';
+    } else if (i % 5 === 0 && i % 7 === 0 && i % 9 === 0) {
+      output = 'BuzzBiffFuzz';
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      output = 'FizzBuzz';
+    } else if (i % 3 === 0 && i % 7 === 0) {
+      output = 'FizzBiff';
+    } else if (i % 3 === 0 && i % 9 === 0) {
+      output = 'FizzFuzz';
+    } else if (i % 5 === 0 && i % 7 === 0) {
+      output = 'BuzzBiff';
+    } else if (i % 5 === 0 && i % 9 === 0) {
+      output = 'BuzzFuzz';
+    } else if (i % 7 === 0 && i % 9 === 0) {
+      output = 'BiffFuzz';
+    } else if (i % 3 === 0) {
+      output = 'Fizz';
+    } else if (i % 5 === 0) {
+      output = 'Buzz';
+    } else if (i % 7 === 0) {
+      output = 'Biff';
+    } else if (i % 9 === 0) {
+      output = 'Fuzz';
+    } else {
+      output = i;
+    }
+
+    console.log(output);
+  }
+}
+
+// fizzBuzz2();
+
+function fizzBuzz3() {
+  for (let i = 1; i <= 1500; i++) {
+    let output = '';
+
+    if (i % 3 === 0) {
+      output += 'Fizz';
+    }
+
+    if (i % 5 === 0) {
+      output += 'Buzz';
+    }
+
+    if (i % 7 === 0) {
+      output += 'Biff';
+    }
+
+    if (i % 9 === 0) {
+      output += 'Fuzz';
+    }
+
+    if (i % 11 === 0) {
+      output += 'Bizz';
+    }
+
+    if (i % 15 === 0) {
+      output += 'Labas';
+    }
+
+    if (!output) {
+      output = i;
+    }
+
+    console.log(output);
+  }
+}
+
+// fizzBuzz3();
+
+
+function fizzBuzz3() {
+  for (let i = 1; i <= 1500; i++) {
+    let output = '';
+
+    if (i % 3 === 0) output += 'Fizz';
+    if (i % 5 === 0) output += 'Buzz';
+    if (i % 7 === 0) output += 'Biff';
+    if (i % 9 === 0) output += 'Fuzz';
+    if (i % 11 === 0) output += 'Bizz';
+    if (i % 13 === 0) output += 'Zuzz';
+
+    if (!output) output = i;
+
+    console.log(output);
+  }
+}
+
+fizzBuzz3();
