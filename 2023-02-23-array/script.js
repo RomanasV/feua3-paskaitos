@@ -255,3 +255,20 @@ let citiesForEach = citiesArr.forEach((city) => {
   return `${city} (${city.length})`;
 });
 console.log(citiesForEach);
+
+// FILTER
+let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// let filteredArray = numArray.filter(num => num > 5 && num % 2 === 0);
+
+let filteredNums = numArray.filter((num) => {
+  return num > 5 && num % 2 === 0;
+});
+
+console.log(filteredNums);
+
+let filteredCities = citiesArr.filter((city) => {
+  return city.length > 7 && city.length % 2 === 0 && city[0] === 'K';
+});
+
+console.log(filteredCities);
