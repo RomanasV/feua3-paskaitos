@@ -140,3 +140,118 @@ let splicedNums = nums.splice(0, 0, 15);
 
 console.log(splicedNums);
 console.log(nums);
+
+
+// UŽDUOTIS:
+// Sukurti 10-ties filmų masyvą ir iš jo:
+let movies = ['Fast and furious', 'Batman', 'Pirates of the Caribbean', 'Avatar', 'Shutter Island', 'Harry Potter', 'King of thieves', 'In yur eyes', 'The Hobbit', 'Schindler\'s List'];
+
+// 1. Išimti pirmus 5 filmus.
+let slicedMovies1 = movies.slice(0, 5);
+console.log('Slice: ', slicedMovies1);
+// let splicedMovies = movies.splice(0, 5);
+
+// 2. Išimti 4 paskutinius filmus.
+let slicedMovies2 = movies.slice(-4);
+console.log('Slice: ', slicedMovies2);
+// let splicedMovies = movies.splice(-4, 4);
+// console.log('Splice: ', splicedMovies);
+
+
+// 3. Išimti nuo trečio iki septinto filmo.
+let slicedMovies3 = movies.slice(2, 7);
+console.log('Slice: ', slicedMovies3);
+// let splicedMovies = movies.splice(2, 5);
+// console.log('Splice: ', splicedMovies);
+
+// 4. Išimti antrą ir trečią filmą.
+let slicedMovies4 = movies.slice(1, 3);
+console.log('Slice: ', slicedMovies4);
+// let splicedMovies = movies.splice(1, 2);
+// console.log('Splice: ', splicedMovies);
+
+// 5. Išimti visus, išskyrus pirmą filmą.
+let slicedMovies5 = movies.slice(1);
+console.log('Slice: ', slicedMovies5);
+// let splicedMovies = movies.splice(1);
+// console.log('Splice: ', splicedMovies);
+
+// 6. Išimti 5 filmus skaičiuojant nuo trečio.
+let slicedMovies6 = movies.slice(2, 7);
+console.log('Slice: ', slicedMovies6);
+// let splicedMovies = movies.splice(2, 5);
+// console.log('Splice: ', splicedMovies);
+
+// 7. Išimti tris filmus nuo galo, tačiau palikti paskutinį.
+let slicedMovies7 = movies.slice(-4, -1);
+console.log('Slice: ', slicedMovies7);
+// let splicedMovies = movies.splice(-4, 3);
+// console.log('Splice: ', splicedMovies);
+
+// 8. Vietoje penkto filmo įrašyti du naujus filmus.
+let splicedMovies8 = movies.splice(4, 1, 'Filmas naujas');
+console.log('Splice: ', splicedMovies8);
+
+// 9. Pašalinti pirmą filmą.
+// let task9 = movies.splice(0, 1);
+let task9 = movies.shift();
+console.log('Task 9: ', task9);
+
+// 10. Įrašyti naują filmą į masyvo pradžią.
+// let task10 = movies.splice(0, 0, 'Dar vienas naujas filmas');
+let task10 = movies.unshift('Dar vienas naujas filmas');
+
+console.log(movies);
+
+// 11.1. Išimti pirmus tris filmus, skaičiuojant nuo antro filmo.
+// let task111 = movies.slice(1, 4);
+let task111 = movies.splice(1, 3);
+console.log(task111);
+
+// 11.2. Išimti paskutinius tris filmus, skaičiuojant nuo priešpaskutinio filmo.
+// let task112 = movies.slice(-4, -1);
+let task112 = movies.splice(-4, 3);
+console.log(task112);
+
+// 11.3. Šiuos išimtus filmus išsaugoti naujame masyve ir padaryti, jog jo nariai būtų apsukti.
+// let task113 = task111.concat(task112).reverse();
+// let task113 = [task111, task112].flat().reverse();
+let task113 = [...task111, ...task112].reverse();
+
+console.log(task113);
+
+
+let citiesArr = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys', 'Marijampolė', 'Alytus'];
+
+// FOR ciklas dirbant su masyvais
+for (let i = 0; i < citiesArr.length; i++) {
+  // console.log(i);
+  console.log('For ciklas: ' + citiesArr[i]);
+}
+
+// MAP
+// citiesArr.map(function(city, index, array) {
+//   console.log(index);
+//   console.log('Map: ' + city);
+//   console.log(array);
+// });
+
+citiesArr.map((city, index, array) => {
+  console.log('Map ciklas: ' + city);
+});
+
+// ForEach
+citiesArr.forEach((city, index, array) => {
+  console.log('For each ciklas: ' + city);
+});
+
+// MAP RETURN
+let citiesMap = citiesArr.map((city) => {
+  return `${city} (${city.length})`;
+}).reverse();
+console.log(citiesMap);
+
+let citiesForEach = citiesArr.forEach((city) => {
+  return `${city} (${city.length})`;
+});
+console.log(citiesForEach);
