@@ -274,7 +274,7 @@ let filteredCities = citiesArr.filter((city) => {
 console.log(filteredCities);
 
 
-const arr = ['start', 2, 3, 5, 11, 155, 888, '15x', 6789, -5564, 'obuolys', -51, 55, 0, 33, 789, 6543, 1, 'trylika', 444, 321, 654, -1, 987, -333, -321, 'end']
+const arr = ['start', 2, 3, 5, 11, 155, 888, '15x', 6789, -5564, 'obuolys', -51, 55, 0, 33, 789, 6543, 1, 'trylika', 444, 321, 654, -1, 987, -333, -321, 'end'];
 
 // 4.1. Tik skaičius (number tipo duomenis).
 // 4.2. Tik tekstą (string tipo duomenis).
@@ -290,7 +290,7 @@ function task41for(data) {
 
 function task41map(data) {
   console.log(data);
-  data.forEach((item) => {
+  data.map((item) => {
     if (typeof item === 'number') {
       console.log(item);
     }
