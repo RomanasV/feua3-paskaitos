@@ -203,6 +203,7 @@ function gameLevel1() {
 
 // gameLevel1();
 
+
 function gameLevel2() {  
   let correctAnswer21 = 1;
   let correctAnswer22 = 1;
