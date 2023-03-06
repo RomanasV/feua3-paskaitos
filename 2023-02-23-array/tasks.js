@@ -18,7 +18,7 @@ function task2(arr) {
   // let arrToStr = arr.join(', ');
   // let output = `Skaičių (${arrToStr}) vidurkis yra ${average}.`;
   // console.log(output);
-  renderOutputResult(arr, average, 'vidurkis');
+  renderOutputResult(arr, average, 'vidurkis', '#task-2');
 }
 
 task2(numbersArray);
@@ -60,7 +60,7 @@ function task3(arr) {
   // let output = `Skaičių (${arrToStr}) mediana yra ${median}.`;
   // console.log(output);
 
-  renderOutputResult(arr, median, 'mediana');
+  renderOutputResult(arr, median, 'mediana', '#task-3');
 }
 
 task3(numbersArray);
@@ -75,7 +75,7 @@ function task4(arr) {
   // let output = `Skaičių (${arrToStr}) didžiausias skaičius yra ${max}.`;
   // console.log(output);
 
-  renderOutputResult(arr, max, 'didžiausias skaičius')
+  renderOutputResult(arr, max, 'didžiausias skaičius', '#task-4');
 }
 
 task4(numbersArray)
@@ -89,7 +89,7 @@ function task5(arr) {
   // let output = `Skaičių (${arrToStr}) mažiausias skaičius yra ${min}.`;
   // console.log(output);
 
-  renderOutputResult(arr, min, 'mažiausias skaičius');
+  renderOutputResult(arr, min, 'mažiausias skaičius', '#task-5');
 }
 
 task5(numbersArray)
@@ -103,15 +103,23 @@ function task6(arr, nth) {
   let nthNumber = sortedArray[index];
 
   let textOutput = `${nth} skaičius pagal dydį`;
-  
-  renderOutputResult(arr, nthNumber, textOutput);
+
+  renderOutputResult(arr, nthNumber, textOutput, '#task-6');
 }
 
 task6(numbersArray, 10);
 
-function renderOutputResult(arr, answer, text) {
+function renderOutputResult(arr, answer, text, selector) {
   let arrToStr = arr.join(', ');
 
   let output = `Skaičių (${arrToStr}) ${text} yra ${answer}.`;
-  console.log(output);
+  // console.log(output);
+
+  let paragraph = document.querySelector(selector);
+  paragraph.textContent = output;
 }
+
+
+// HTML elemento selektinimas naudojant JavaScript'ą
+// let paragraph = document.querySelector('p');
+// paragraph.textContent = 'Labas';
