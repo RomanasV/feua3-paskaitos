@@ -249,3 +249,34 @@ div.innerHTML += `<p>${greeting(10, true, 'John', false)}</p>`;
 
 let task11Element = document.querySelector('#task-11');
 task11Element.textContent = greeting(10, true, 'John', true);
+
+
+let ulElement = document.querySelector('ul');
+
+function forLoop() {
+  for (let i = 1; i <= 100; i++) {
+    ulElement.innerHTML += `<li>- ${i} !!!</li>`;
+  }
+}
+
+// forLoop();
+
+function task1(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i = i + nth) {
+    let answer = i * 2;
+    let output = `${i} * 2 = ${answer}`;
+    ulElement.innerHTML += '<li>' + output + '</li>';
+  }
+}
+
+// task1(155, 3483, 30);
+
+function task2(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    let answer = i * 5;
+    let output = `${i} * 5 = ${answer}`;
+    ulElement.innerHTML += `<li>${output}</li>`;
+  }
+}
+
+task2(10, 50, 5);
