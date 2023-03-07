@@ -279,4 +279,87 @@ function task2(start = 1, end = 100, nth = 1) {
   }
 }
 
-task2(10, 50, 5);
+// task2(10, 50, 5);
+
+function task3() {
+  for (let i = 1; i <= 100; i++) {
+    ulElement.innerHTML += `<li>${i + 5}</li>`
+  }
+}
+
+// task3();
+
+// 4. Atima iš skaičiaus 2.
+function task4() {
+  for (let i = 1; i <= 100; i++) {
+    ulElement.innerHTML += '<li>' + (i - 2) + '</li>';
+  }
+}
+
+// task4();
+
+// 5. Pakelia skaičių kvadratu.
+function task5() {
+  for (let i = 1; i <= 100; i++) {
+    // console.log(i * i);
+    // console.log(Math.pow(i, 2));
+    // console.log(i**2);
+    ulElement.innerHTML += '<li>' + i**2 + '</li>';
+  }
+}
+
+// task5();
+
+// 6. Pakelia skaičių kūbu.
+function task6() {
+  for (let i = 1; i <= 100; i++) {
+    // console.log(i * i * i);
+    // console.log(Math.pow(i, 3));
+    // console.log(i**3);
+
+    ulElement.innerHTML += '<li>' + i**3 + '</li>';
+  }
+}
+
+// task6();
+
+function task12(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    let answer = i * 2;
+    let output = `${i} * 2 = ${answer}`;
+    // console.log(output);
+    ulElement.innerHTML += '<li>' + output + '</li>';
+  }
+}
+
+// task12(500, 470, 2);
+
+function task22() {
+  for (let i = 100; i >= 1; i--) {
+    // console.log(i * 5);
+    ulElement.innerHTML += '<li>' + (i * 5) + '</li>';
+  }
+}
+
+// task22();
+
+function fizzBuzz3() {
+  for (let i = 1; i <= 100; i++) {
+    let output = '';
+
+    if (i % 3 === 0) output += 'Fizz';
+    if (i % 5 === 0) output += 'Buzz';
+    if (i % 7 === 0) output += 'Biff';
+    if (i % 9 === 0) output += 'Fuzz';
+    if (i % 11 === 0) output += 'Bizz';
+    if (i % 13 === 0) output += 'Zuzz';
+
+    if (!output) output = i;
+
+    // console.log(output);
+
+    ulElement.innerHTML += `<li>${output}</li>`;
+  }
+}
+
+fizzBuzz3();
