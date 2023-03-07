@@ -1,6 +1,18 @@
+let paragraph = document.querySelector('p');
+paragraph.textContent = 'Labas';
+paragraph.textContent = paragraph.textContent + ' vakaras';
+paragraph.textContent += '.';
+
+let div = document.querySelector('div');
+div.innerHTML = '<p>Labas</p>';
+
 function hello() {
-  return 'Sveikas';
+  return 'Sveikas.';
 }
+
+paragraph.textContent += ' ' + hello();
+
+div.innerHTML += '<p>' + hello() + '</p>';
 
 let task1Element = document.querySelector('#task-1');
 task1Element.textContent = hello();
@@ -9,6 +21,10 @@ function helloWithName(personName, personSurname) {
   let text = 'Hello, ' + personName + ' ' + personSurname + '.';
   return text;
 }
+
+paragraph.textContent += ' ' + helloWithName('John', 'Doe');
+
+div.innerHTML += `<p>${helloWithName('John', 'Doe')}</p>`;
 
 let task2Element = document.querySelector('#task-2');
 task2Element.textContent = helloWithName('John', 'Doe');
@@ -19,7 +35,13 @@ function perimeter(height, width, units) {
   return output;
 }
 
-console.log(perimeter(10, 10, 'km.'));
+paragraph.textContent += ' ' + perimeter(40, 10, 'km.');
+
+div.innerHTML += `<p>${perimeter(40, 10, 'km.')}</p>`;
+
+// console.log(perimeter(10, 10, 'km.'));
+let task3Element = document.querySelector('#task-3');
+task3Element.textContent = perimeter(40, 10, 'km.');
 
 function rectArea(height, width, units) {
   let unitsText = units ? units : 'vnt';
@@ -29,8 +51,14 @@ function rectArea(height, width, units) {
   return output;
 }
 
-console.log(rectArea(10, 15, 'cm'));
-console.log(rectArea(10, 20, 'm'));
+// console.log(rectArea(10, 15, 'cm'));
+
+paragraph.textContent += ' ' + rectArea(10, 15, 'cm');
+
+div.innerHTML += `<p>${rectArea(10, 15, 'cm')}</p>`;
+
+let task4Element = document.querySelector('#task-4');
+task4Element.textContent = rectArea(10, 15, 'cm');
 
 function triangleArea(height = 0, width = 0, units = 'vnt') {
   let answer = height * width / 2;
@@ -38,7 +66,13 @@ function triangleArea(height = 0, width = 0, units = 'vnt') {
   return output;
 }
 
-console.log(triangleArea(10, 15, 'cm'));
+// console.log(triangleArea(10, 15, 'cm'));
+
+paragraph.textContent += ' ' + triangleArea(10, 15, 'cm');
+
+div.innerHTML += `<p>${triangleArea(10, 15, 'cm')}</p>`;
+
+document.querySelector('#task-5').textContent = triangleArea(10, 15, 'cm');
 
 function allAreas(figureHeight = 0, figureWidth = 0, units = 'vnt') {
   let rectText = rectArea(figureHeight, figureWidth, units);
@@ -48,7 +82,13 @@ function allAreas(figureHeight = 0, figureWidth = 0, units = 'vnt') {
   return output;
 }
 
-console.log(allAreas(10, 15, 'cm'));
+// console.log(allAreas(10, 15, 'cm'));
+paragraph.textContent += ' ' + allAreas(10, 15, 'cm');
+
+div.innerHTML += `<p>${allAreas(10, 15, 'cm')}</p>`;
+
+let task6Element = document.querySelector('#task-6');
+task6Element.textContent = allAreas(10, 15, 'cm');
 
 function streetLight(originalLight) {
   let light = originalLight.toLowerCase();
@@ -60,29 +100,41 @@ function streetLight(originalLight) {
   return 'Sugedo';
 }
 
-console.log(streetLight('green'));
+// console.log(streetLight('green'));
+paragraph.textContent += ' ' + streetLight('green');
+
+div.innerHTML += `<p>${streetLight('green')}</p>`;
+
+let task7Element = document.querySelector('#task-7');
+task7Element.textContent = streetLight('green');
 
 function checkAge(age) {
   if (age < 0) {
-    return 'Amžius yra per mažas';
+    return 'Amžius yra per mažas.';
   } 
   
   if (age >= 0 && age < 16) {
-    return 'Pirki negalima';
+    return 'Pirki negalima.';
   } 
   
   if (age >= 16 && age < 18) {
-    return 'Pirkti galima su tėvų sutikimu';
+    return 'Pirkti galima su tėvų sutikimu.';
   } 
   
   if (age >= 18 && age <= 120) {
-    return 'Pirkti galima';
+    return 'Pirkti galima.';
   } 
   
-  return 'Amžius per didelis';
+  return 'Amžius per didelis.';
 }
 
-console.log(checkAge(15));
+// console.log(checkAge(15));
+paragraph.textContent += ' ' + checkAge(15);
+
+div.innerHTML += `<p>${checkAge(15)}</p>`;
+
+let task8Element = document.querySelector('#task-8');
+task8Element.textContent = checkAge(15);
 
 function checkPassword(originalPassword) {
   let password = originalPassword.trimStart().trimEnd().replaceAll(' ', '');
@@ -92,25 +144,31 @@ function checkPassword(originalPassword) {
   }
 
   if (!password.includes('#')) {
-    return 'Slaptažodyje privalo būti grotažymės (#)';
+    return 'Slaptažodyje privalo būti grotažymės (#).';
   } 
   
   if (password.length > 20) {
-    return 'Slaptažodis tinkamas';
+    return 'Slaptažodis tinkamas.';
   } 
   
   return 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.';
 }
 
-console.log(checkPassword('a#sdasdjhaksljdhaksdh'));
+// console.log(checkPassword('a#sdasdjhaksljdhaksdh'));
+paragraph.textContent += ' ' + checkPassword('a#sdasdjhaksljdhaksdh');
+
+div.innerHTML += `<p>${checkPassword('a#sdasdjhaksljdhaksdh')}</p>`;
+
+let task9Element = document.querySelector('#task-9');
+task9Element.textContent = checkPassword('a#sdasdjhaksljdhaksdh');
 
 function ageStatus(age) {
   if (age < 0) {
-    return 'Amžius yra per mažas';
+    return 'Amžius yra per mažas.';
   } 
   
   if (age < 6) {
-    return 'Į mokyklą neina';
+    return 'Į mokyklą neina.';
   } 
   
   if (age < 7) {
@@ -118,7 +176,7 @@ function ageStatus(age) {
   } 
   
   if (age < 10) {
-    return 'Pradinukas';
+    return 'Pradinukas.';
   } 
   
   if (age < 11) {
@@ -126,7 +184,7 @@ function ageStatus(age) {
   } 
   
   if (age < 14) {
-    return 'Pagrindinė';
+    return 'Pagrindinė.';
   } 
   
   if (age < 15) {
@@ -134,7 +192,7 @@ function ageStatus(age) {
   } 
   
   if (age < 18) {
-    return 'Gimnazija';
+    return 'Gimnazija.';
   } 
   
   if (age < 19) {
@@ -142,13 +200,19 @@ function ageStatus(age) {
   } 
   
   if (age < 120) {
-    return 'Mokyklą baigė';
+    return 'Mokyklą baigė.';
   } 
   
-  return 'Amžius yra per didelis';
+  return 'Amžius yra per didelis.';
 }
 
-console.log(ageStatus(15));
+// console.log(ageStatus(15));
+paragraph.textContent += ' ' + ageStatus(15);
+
+div.innerHTML += `<p>${ageStatus(15)}</p>`;
+
+let task10Element = document.querySelector('#task-10');
+task10Element.textContent = ageStatus(25);
 
 function greeting(time, isLoggedIn, personName, isBirthday) {
   let timeOutput = '';
@@ -178,115 +242,10 @@ function greeting(time, isLoggedIn, personName, isBirthday) {
   return output;
 }
 
-console.log(greeting(10, true, 'John', false));
+// console.log(greeting(10, true, 'John', false));
+paragraph.textContent += ' ' + greeting(10, true, 'John', false);
 
-function gameLevel1() {
-  let correctAnswer11 = 579;
-  let correctAnswer12 = 'sun';
+div.innerHTML += `<p>${greeting(10, true, 'John', false)}</p>`;
 
-  let playerAnswer11 = prompt('1 lygis, 1 klausimas: kiek bus 123 + 456?');
-  let playerAnswer12 = prompt('1 lygis, 2 klausimas: kaip vadinasi arčiausiai Žemės esanti Žvaigždė?');
-
-  if (correctAnswer11 == playerAnswer11 && correctAnswer12 == playerAnswer12) {
-    alert('Patekai: abu teisingi.');
-    gameLevel2();
-  } else if (correctAnswer11 == playerAnswer11) {
-    alert('Patekai: antras neteisingas.');
-    gameLevel2();
-  } else if (correctAnswer12 == playerAnswer12) {
-    alert('Patekai: pirmas neteisingas');
-    gameLevel2();
-  } else {
-    alert('Nepatekai: abu neteisingi.');
-  }
-}
-
-// gameLevel1();
-
-
-function gameLevel2() {  
-  let correctAnswer21 = 1;
-  let correctAnswer22 = 1;
-
-  let playerAnswer21 = prompt('2 lygis, 1 klausimas: .....');
-  let playerAnswer22 = prompt('2 lygis, 2 klausimas: .....');
-
-  if (correctAnswer21 == playerAnswer21 && correctAnswer22 == playerAnswer22) {
-    alert('Patekai: abu teisingi.');
-    gameLevel3();
-  } else if (correctAnswer21 == playerAnswer21) {
-    alert('Nepatekai: pirmas teisingas.');
-  } else if (correctAnswer22 == playerAnswer22) {
-    alert('Nepatekai: antras teisingas');
-  } else {
-    alert('Nepatekai: abu neteisingi.');
-  }
-}
-
-function gameLevel3() {
-  let correctAnswer31 = 1;
-  let correctAnswer32 = 1;
-  let correctAnswer33 = 1;
-  
-  let playerAnswer31 = prompt('3 lygis, 1 klausimas: .....');
-  let playerAnswer32 = prompt('3 lygis, 2 klausimas: .....');
-  let playerAnswer33 = prompt('3 lygis, 3 klausimas: .....');
-  
-  let answer1 = correctAnswer31 == playerAnswer31;
-  let answer2 = correctAnswer32 == playerAnswer32;
-  let answer3 = correctAnswer33 == playerAnswer33;
-  
-  if (answer1 && answer2 && answer3) {
-    alert('Patekai: visi atakymai teisingi.');
-    gameLevel4();
-  } else if (answer2 && answer3) {
-    alert('Patekai: bet pirmas neteisingas.');
-    gameLevel4();
-  } else if (answer1 && answer3) {
-    alert('Patekai: bet antras neteisingas.');
-    gameLevel4();
-  } else if (answer1 && answer2) {
-    alert('Patekai: bet trečias neteisingas.');
-    gameLevel4();
-  } else if (answer1) {
-    alert('Nepatekai: bet pirmas teisingas.');
-  } else if (answer2) {
-    alert('Nepatekai: bet antras teisingas.');
-  } else if (answer3) {
-    alert('Nepatekai: bet trečias teisingas.');
-  } else {
-    alert('Nepatekai: visi neteisingi :(');
-  }
-}
-
-function gameLevel4() {
-  let correctAnswer31 = 1;
-  let correctAnswer32 = 1;
-  let correctAnswer33 = 1;
-  
-  let playerAnswer31 = prompt('4 lygis, 1 klausimas: .....');
-  let playerAnswer32 = prompt('4 lygis, 2 klausimas: .....');
-  let playerAnswer33 = prompt('4 lygis, 3 klausimas: .....');
-  
-  let answer1 = correctAnswer31 == playerAnswer31;
-  let answer2 = correctAnswer32 == playerAnswer32;
-  let answer3 = correctAnswer33 == playerAnswer33;
-  
-  if (answer1 && answer2 && answer3) {
-    alert('Sveikiname, laimėjai!')
-  } else if (answer2 && answer3) {
-    alert('Nelaimėjai: bet antras ir trečias buvo teisingi.')
-  } else if (answer1 && answer3) {
-    alert('Nelaimėjai: bet pirmas ir trečias buvo teisingas.')
-  } else if (answer1 && answer2) {
-    alert('laimėjai: bet pirmas ir antras buvo teisingas.')
-  } else if (answer1) {
-    alert('Nelaimėjai: bet pirmas teisingas.')
-  } else if (answer2) {
-    alert('Nelaimėjai: bet antras teisingas.')
-  } else if (answer3) {
-    alert('Nelaimėjai: bet trečias teisingas.')
-  } else {
-    alert('Nelaimėjai: visi neteisingi :(')
-  }
-}
+let task11Element = document.querySelector('#task-11');
+task11Element.textContent = greeting(10, true, 'John', true);
