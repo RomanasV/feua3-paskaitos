@@ -298,3 +298,13 @@ function task41map(data) {
 }
 
 task41map(arr);
+
+
+let moviesArr = ['Fast and furious', 'Batman', 'Pirates of the Caribbean', 'Avatar', 'Shutter Island', 'Harry Potter', 'King of thieves', 'In yur eyes', 'The Hobbit', 'Schindler\'s List'];
+
+console.log(moviesArr)
+
+// 12. Filmų sąrašą išvesti į ekraną (ul - li elementuose). Prie filmo pavadinimo pridėti filmo eilės numerį.
+
+// 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
+// 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
