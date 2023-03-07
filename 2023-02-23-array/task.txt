@@ -29,6 +29,10 @@ Sukurti 10-ties filmų masyvą ir iš jo:
 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
 
+14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
+14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.
+
+
 1. Sukurti 10-ies skaičių masyvą.
 
 2. Sukurti funkciją, kuri priima skaičių masyvą ir grąžina jų vidurkį.

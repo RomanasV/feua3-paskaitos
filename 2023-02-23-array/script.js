@@ -308,3 +308,13 @@ console.log(moviesArr)
 
 // 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
 // 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
+
+function movies1(arr) {
+  console.log(arr)
+  arr.map(item => {
+    console.log(item)
+  })
+}
+
+movies1(arr);
+movies1(moviesArr);
