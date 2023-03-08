@@ -302,19 +302,171 @@ task41map(arr);
 
 let moviesArr = ['Fast and furious', 'Batman', 'Pirates of the Caribbean', 'Avatar', 'Shutter Island', 'Harry Potter', 'King of thieves', 'In yur eyes', 'The Hobbit', 'Schindler\'s List'];
 
-console.log(moviesArr)
+let citiesArray = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys', 'Marijampolė', 'Alytus'];
 
 // 12. Filmų sąrašą išvesti į ekraną (ul - li elementuose). Prie filmo pavadinimo pridėti filmo eilės numerį.
+
+function moviesTask12(arr, selector) {
+  let ulElement = document.querySelector(selector);
+  
+  // for (let i = 0; i < arr.length; i++) {
+  //   let elementNumber = i + 1;
+  //   let item = arr[i];
+
+  //   let element = `<li>${elementNumber}. ${item}</li>`;
+  //   ulElement.innerHTML += element;
+  // }
+
+  arr.map((item, index) => {
+    let elementNumber = index + 1;
+
+    let element = `<li>${elementNumber}. ${item}</li>`;
+    ulElement.innerHTML += element;
+  });
+}
+
+// moviesTask12(moviesArr, '#movies-1');
+
+let moviesArr2 = ['Fast and furious', 'Batman', 'Pirates of the Caribbean', 'Avatar', 'Shutter Island', 'Harry Potter', 'King of thieves', 'In yur eyes', 'The Hobbit', 'Schindler\'s List'];
+
+let moviesYear2 = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010];
 
 // 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
 // 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
 
-function movies1(arr) {
-  console.log(arr)
-  arr.map(item => {
-    console.log(item)
+function moviesTask13(movies, years, selector) {
+  let ulElement = document.querySelector(selector);
+
+  if (movies.length === years.length) {
+    for (let i = 0; i < movies.length; i++) {
+      let movieNumber = i + 1;
+      let movieTitle = movies[i];
+      let movieYear = years[i];
+      
+      let element = `<li>${movieNumber}. ${movieTitle} (${movieYear})</li>`;
+      ulElement.innerHTML += element;
+    }
+  } else {
+    console.error('Masyvų ilgiai nesutampa');
+
+    // for (let i = 0; i < movies.length; i++) {
+    //   let movieNumber = i + 1;
+    //   let movieTitle = movies[i];
+      
+    //   let element = `<li>${movieNumber}. ${movieTitle}</li>`;
+    //   ulElement.innerHTML += element;
+    // }
+
+    moviesTask12(movies, selector);
+  }
+}
+
+// moviesTask13(moviesArr2, moviesYear2, '#movies-1');
+
+
+let moviesArr3 = [
+  ['Filmas 1', 2001],
+  ['Filmas 2', 2002],
+  ['Filmas 3', 2003],
+  ['Filmas 4', 2004],
+  ['Filmas 5'],
+  ['Filmas 6', 2006],
+  ['Filmas 7', 2007],
+  ['Filmas 8'],
+  ['Filmas 9', 2009],
+  ['Filmas 10', 2010],
+];
+
+// console.log(moviesArr3);
+// console.log(moviesArr3[0]);
+// console.log(moviesArr3[0][0]);
+// console.log(moviesArr3[0][1]);
+
+// console.log(moviesArr3[1]);
+// console.log(moviesArr3[1][0]);
+// console.log(moviesArr3[1][1]);
+
+// console.log(moviesArr3[2]);
+// console.log(moviesArr3[2][0]);
+// console.log(moviesArr3[2][1]);
+
+// console.log(moviesArr3[3]);
+// console.log(moviesArr3[3][0]);
+// console.log(moviesArr3[3][1]);
+
+// console.log(moviesArr3[4]);
+// console.log(moviesArr3[4][0]);
+// console.log(moviesArr3[4][1]);
+
+// console.log(moviesArr3[5]);
+// console.log(moviesArr3[5][0]);
+// console.log(moviesArr3[5][1]);
+
+// console.log(moviesArr3[6]);
+// console.log(moviesArr3[6][0]);
+// console.log(moviesArr3[6][1]);
+
+// console.log(moviesArr3[7]);
+// console.log(moviesArr3[7][0]);
+// console.log(moviesArr3[7][1]);
+
+// console.log(moviesArr3[8]);
+// console.log(moviesArr3[8][0]);
+// console.log(moviesArr3[8][1]);
+
+// console.log(moviesArr3[9]);
+// console.log(moviesArr3[9][0]);
+// console.log(moviesArr3[9][1]);
+
+
+function moviesTask31(arr, selector) {
+  let ulElement = document.querySelector(selector);
+
+  // for (let i = 0; i < arr.length; i++) {
+  //   let movieNumber = i + 1;
+  //   let movieData = arr[i];
+  //   let movieTitle = movieData[0];
+  //   let movieYear = movieData[1];
+
+  //   // let yearText = '';
+  //   // if (movieYear) {
+  //   //   yearText = ` (${movieYear})`;
+  //   // }
+
+  //   let yearText = movieYear ? ` (${movieYear})` : '';
+
+  //   let element = `<li>${movieNumber}. ${movieTitle}${yearText}</li>`;
+
+  //   ulElement.innerHTML += element;
+  // }
+
+  arr.map((movieData, i) => {
+    let movieNumber = i + 1;
+    let movieTitle = movieData[0];
+    let movieYear = movieData[1];
+
+    let yearText = movieYear ? ` (${movieYear})` : '';
+
+    let element = `<li>${movieNumber}. ${movieTitle}${yearText}</li>`;
+
+    ulElement.innerHTML += element;
   })
 }
 
-movies1(arr);
-movies1(moviesArr);
+moviesTask31(moviesArr3, '#movies-1');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
+// 14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.
