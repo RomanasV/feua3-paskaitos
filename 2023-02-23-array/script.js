@@ -457,16 +457,55 @@ moviesTask31(moviesArr3, '#movies-1');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // 14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
 // 14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.
+
+let movies1 = ['Filmas 1', 'Filmas 2', 'Filmas 3'];
+let movies2 = ['Filmas 4', 'Filmas 5', 'Filmas 6'];
+let movies3 = ['Filmas 7', 'Filmas 8', 'Filmas 9'];
+
+function moviesTask14(arr1, arr2, arr3, selector) {
+  let ulElement = document.querySelector(selector);
+  let itemNumber = 1;
+
+  // for (let i = 0; i < arr1.length; i++) {
+  //   let item = arr1[i];
+  //   ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+  //   itemNumber++;
+  // }
+
+  // for (let i = 0; i < arr2.length; i++) {
+  //   let item = arr2[i];
+  //   ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+  //   itemNumber++;
+  // }
+
+  // for (let i = 0; i < arr3.length; i++) {
+  //   let item = arr3[i];
+  //   ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+  //   itemNumber++;
+  // }
+
+  arr1.map(item => {
+    ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+    itemNumber++;
+  })
+
+  arr2.map(item => {
+    ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+    itemNumber++;
+  })
+
+  arr3.map(item => {
+    ulElement.innerHTML += `<li>${itemNumber}. ${item}</li>`;
+    itemNumber++;
+  })
+}
+
+// moviesTask14(movies1, movies2, movies3, '#movies-2');
+
+// let allMovies = [...movies1, ...movies2, ...movies3];
+// let allMovies = movies1.concat(movies2, movies3);
+let allMovies = [movies1, movies2, movies3].flat();
+
+moviesTask12(allMovies, '#movies-2');
