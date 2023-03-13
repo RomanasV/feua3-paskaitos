@@ -79,7 +79,39 @@ let studentObj = {
   age: 30,
   group: 25,
   city: 'Vilnius',
+  getFullName: function() {
+    return `${this.name} ${this['middle name']} ${this.surname}`;
+  },
+  setStudentInactive: function() {
+    this.isActive = false;
+    return this.isActive;
+  },
+  setStudentIsActive() {
+    this.isActive = true;
+  },
+  switchStudentActivity() {
+    // if (this.isActive) {
+    //   this.isActive = false;
+    // } else {
+    //   this.isActive = true;
+    // }
+
+    this.isActive = !this.isActive;
+  },
+  removeHobby(hobbyToRemove) {
+    // let updatedHobbies = this.hobbies.filter((hobby) => {
+    //   return hobby !== hobbyToRemove;
+    // })
+
+    // this.hobbies = updatedHobbies;
+    // return this.hobbies;
+
+    this.hobbies = this.hobbies.filter(hobby => hobby !== hobbyToRemove);
+    return this.hobbies;
+  }
 }
+
+console.log(studentObj.getFullName());
 
 console.log(studentObj);
 
@@ -172,7 +204,7 @@ console.log(studentObj.address.apartment);
 
 console.log(studentObj);
 
-
+console.groupCollapsed('Objektai masyve');
 // Objektai masyve
 let movies = [
   {
@@ -231,6 +263,36 @@ let filteredMovies = movies.filter((movie) => {
 })
 console.log(filteredMovies);
 
+console.groupEnd();
 
-// let company1 = {};
-let company1 = new Object();
+console.log(studentObj.isActive);
+studentObj.setStudentInactive();
+console.log(studentObj.isActive);
+studentObj.setStudentIsActive();
+console.log(studentObj.isActive);
+studentObj.switchStudentActivity();
+console.log(studentObj.isActive);
+studentObj.switchStudentActivity();
+console.log(studentObj.isActive);
+studentObj.switchStudentActivity();
+studentObj.switchStudentActivity();
+console.log(studentObj.isActive);
+
+studentObj.getAllHobbies = function() {
+  let output = `Hobbies: ${this.hobbies.join(', ')}.`;
+  return output;
+}
+
+console.log(studentObj.getAllHobbies());
+
+studentObj.addHobby = function(newHobby) {
+  this.hobbies.push(newHobby);
+  return this.hobbies;
+}
+
+console.log(studentObj.hobbies);
+console.log(studentObj.addHobby('Swimming'));
+console.log(studentObj.hobbies);
+
+studentObj.removeHobby('Traveling');
+console.log(studentObj.hobbies);
