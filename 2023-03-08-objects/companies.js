@@ -216,3 +216,16 @@ let company2 = {
 
 // console.log(company1);
 // console.log(company2);
+
+
+function renderCompanyElement(data) {
+  console.log(data)
+  console.log(data['company name']);
+  console.log(data.ceo);
+
+  let companyContainer = document.querySelector('#company-container');
+  companyContainer.innerHTML = `<h1>${data['company name']}</h1>
+                                <span>Company CEO: ${data.ceo}</span>`;
+}
+
+renderCompanyElement(company2);
