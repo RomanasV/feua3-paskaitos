@@ -66,6 +66,99 @@ company1.contacts.address.apartment = 15;
 
 company1.subsidiaries = [];
 
+// 5. Sukurti funkciją, kuri sukuria adreso string'ą: „Vilniaus st. 15, Vilnius, Lithuania.".
+company1.getAddress = function() {
+  let fullAddress = `${this.contacts.address.street} ${this.contacts.address.apartment}, ${this.contacts.address.city}, ${this.contacts.address.country}.`;
+  return fullAddress;
+}
+console.log(company1.getAddress());
+
+// 6. Sukurti dvi funkcijas, kurios:
+//        6.1. Pakeičia NVO statusą į true.
+company1.setNVO = function() {
+  this.nvo = true;
+}
+
+console.log(company1.nvo);
+company1.setNVO();
+console.log(company1.nvo);
+
+//        6.2. Pakeičia NVO statusą į false.
+company1.setNonNVO = function() {
+  this.nvo = false;
+}
+
+company1.setNonNVO();
+console.log(company1.nvo);
+
+//        6.3. BONUS, sukurti funkciją, kuri keičia NVO statusą iš true į false ir iš false į true.
+company1.switchNVO = function() {
+  this.nvo = !this.nvo;
+}
+
+company1.switchNVO();
+console.log(company1.nvo);
+company1.switchNVO();
+console.log(company1.nvo);
+
+// 7. Sukurti funkcijas, kurios grąžina:
+//        7.1. Šalis, kuriose veikia įmonė į vieną string'ą.
+company1.getWorkingLocations = function() {
+  let workingLocationsText = `Company is working in: ${this.workingLocations.join(', ')}.`;
+  return workingLocationsText;
+}
+
+console.log(company1.getWorkingLocations());
+
+//        7.2. Veiklos sritis, kuriose veikia įmonė į vieną string'ą.
+company1.getActivityAreas = function() {
+  return `Activity areas: ${this.activityAreas.join(', ')}.`;
+}
+
+console.log(company1.getActivityAreas());
+
+// 8. Sukurti funkcijas, kurios prideda:
+//        8.1. Naują veiklos šalį prie šalių masyvo.
+company1.addNewWorkingLocation = function(newLocation) {
+  this.workingLocations.push(newLocation);
+}
+
+console.log(company1.workingLocations);
+company1.addNewWorkingLocation('France');
+console.log(company1.workingLocations);
+
+//        8.2. Naują veiklos rūšį prie veiklų masyvo.
+company1.addNewActivityArea = function(newArea) {
+  this.activityAreas.push(newArea);
+}
+
+console.log(company1.activityAreas);
+company1.addNewActivityArea('B2B Sales');
+console.log(company1.activityAreas);
+
+// 9. Sukurti funkcijas, kurios pašalina:
+//        9.1. Veiklos šalį iš šalių masyvo.
+company1.removeWorkingArea = function(locationToRemove) {
+  let updatedLocations = this.workingLocations.filter(location => location !== locationToRemove);
+  this.workingLocations = updatedLocations;
+}
+
+console.log(company1.workingLocations);
+company1.removeWorkingArea('France');
+company1.removeWorkingArea('Poland');
+console.log(company1.workingLocations);
+
+//        9.2. Veiklos rūšį iš veiklų masyvo.
+company1.removeActivityArea = function(areaToRemove) {
+  this.activityAreas = this.activityAreas.filter(area => area !== areaToRemove);
+}
+
+console.log(company1.activityAreas);
+company1.removeActivityArea('B2B Sales');
+console.log(company1.activityAreas);
+
+console.log(company1);
+
 let company2 = {
   'company name': 'Company XYZ',
   opened: 2010,
@@ -86,7 +179,40 @@ let company2 = {
     }
   },
   subsidiaries: [company1],
+  getAddress() {
+    let fullAddress = `${this.contacts.address.street} ${this.contacts.address.apartment}, ${this.contacts.address.city}, ${this.contacts.address.country}.`;
+    return fullAddress;
+  },
+  setNVO() {
+    this.nvo = true;
+  },
+  setNonNVO() {
+    this.nvo = false;
+  },
+  switchNVO() {
+    this.nvo = !this.nvo;
+  },
+  getWorkingLocations() {
+    let workingLocationsText = `Company is working in: ${this.workingLocations.join(', ')}.`;
+    return workingLocationsText;
+  },
+  getActivityAreas() {
+    return `Activity areas: ${this.activityAreas.join(', ')}.`;
+  },
+  addNewWorkingLocation(newLocation) {
+    this.workingLocations.push(newLocation);
+  },
+  addNewActivityArea(newArea) {
+    this.activityAreas.push(newArea);
+  },
+  removeWorkingArea(locationToRemove) {
+    let updatedLocations = this.workingLocations.filter(location => location !== locationToRemove);
+    this.workingLocations = updatedLocations;
+  },
+  removeActivityArea(areaToRemove) {
+    this.activityAreas = this.activityAreas.filter(area => area !== areaToRemove);
+  }
 }
 
-console.log(company1);
-console.log(company2);
+// console.log(company1);
+// console.log(company2);
