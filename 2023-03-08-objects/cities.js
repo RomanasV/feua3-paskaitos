@@ -94,21 +94,28 @@ let citiesList =  [
 
 function renderCities(cities) {
   console.log(cities);
+  const citiesListElement = document.querySelector('#cities');
+
   cities.forEach(city => {
     console.log(city);
-    console.log(city.name);
-    console.log(city.population);
+    // console.log(city.name);
+    // console.log(city.population);
     console.log(city.isCapital);
   
-    console.log(city.location);
-    console.log(city.location.continent);
-    console.log(city.location.country);
+    // console.log(city.location);
+    // console.log(city.location.continent);
+    // console.log(city.location.country);
   
     console.log(city.touristAttractions);
   
     city.touristAttractions.map(attraction => {
       console.log(attraction)
     })
+
+    citiesListElement.innerHTML += `<div>
+                                      <h2>${city.name}</h2>
+                                      <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.</p>
+                                    </div>`;
   });
 }
 

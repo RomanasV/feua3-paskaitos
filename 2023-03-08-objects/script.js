@@ -296,3 +296,4 @@ console.log(studentObj.hobbies);
 
 studentObj.removeHobby('Traveling');
 console.log(studentObj.hobbies);
+
