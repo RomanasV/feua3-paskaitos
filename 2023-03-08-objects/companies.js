@@ -165,16 +165,16 @@ let company2 = {
   code: 45465464,
   employees: 10,
   ceo: 'Doe John',
-  nvo: true,
+  nvo: false,
   workingLocations: ['Lithuania', 'Germany'],
-  activityAreas: ['Marketing'],
+  activityAreas: ['Marketing', 'Sales'],
   contacts: {
     phone: 3704513131,
     email: 'info@xyz.lt',
     address: {
       country: 'Lithuania',
       city: 'Kaunas',
-      street: 'Kauno st.',
+      street: 'Vilniaus st.',
       apartment: 10
     }
   },
@@ -218,14 +218,79 @@ let company2 = {
 // console.log(company2);
 
 
-function renderCompanyElement(data) {
+function renderCompanyElement(data, selector) {
   console.log(data)
   console.log(data['company name']);
   console.log(data.ceo);
+  console.log(data.opened);
+  console.log(data.employees);
+  console.log(data.nvo);
+  console.log(data.contacts);
+  console.log(data.contacts.email);
+  console.log(data.contacts.phone);
+  console.log(data.contacts.address);
+  console.log(data.contacts.address.apartment);
+  console.log(data.contacts.address.city);
+  console.log(data.contacts.address.country);
+  console.log(data.contacts.address.street);
+  console.log(data.getAddress());
+  console.log(data.activityAreas);
 
-  let companyContainer = document.querySelector('#company-container');
+  console.log(data.workingLocations);
+
+  console.log(data.getActivityAreas());
+  console.log(data.getWorkingLocations());
+
+
+
+
+
+  let workingLocationsListElements = '';
+  
+  data.workingLocations.forEach(location => {
+    workingLocationsListElements += '<li>' + location + '</li>';
+  });
+  console.log(workingLocationsListElements)
+
+
+
+  
+  let companyNVOText = '';
+
+  if (data.nvo) {
+    companyNVOText = 'Company has NVO status';
+  } else {
+    companyNVOText = 'Company does not have NVO status';
+  }
+
+  let companyContainer = document.querySelector(selector);
+
   companyContainer.innerHTML = `<h1>${data['company name']}</h1>
-                                <span>Company CEO: ${data.ceo}</span>`;
+                                <p>Company CEO: ${data.ceo}</p>
+                                <p>Employees: ${data.employees}</p>
+                                <p>Company open year: ${data.opened}</p>
+                                <p>${companyNVOText}</p>
+                                <p>${data.getActivityAreas()}</p>
+                                <p>${data.getWorkingLocations()}</p>
+                                <h3>Contacts:</h3>
+                                <ul>
+                                  <li>Email: <a href="mailto:${data.contacts.email}">${data.contacts.email}</a></li>
+                                  <li>Phone: <a href="tel:${data.contacts.phone}">${data.contacts.phone}</a></li>
+                                  <li>Address: ${data.getAddress()}</li>
+                                </ul>
+                                <h3>Working locations:</h3>
+                                <ul>${workingLocationsListElements}</ul>`;
+
+  if (data.activityAreas.length > 0) {
+    let activityAreasListElements = data.activityAreas.map(area => '<li>' + area + '</li>').join('');
+    console.log(activityAreasListElements);
+    
+    companyContainer.innerHTML += `<h3>Activity areas:</h3>
+    <ul>${activityAreasListElements}</ul>`;
+  } else {
+    companyContainer.innerHTML += '<h3>No activity areas...</h3>';
+  }                      
 }
 
-renderCompanyElement(company2);
+renderCompanyElement(company2, '#company-container-1');
+renderCompanyElement(company1, '#company-container-2');
