@@ -137,7 +137,35 @@ renderCities(citiesList);
 
 // 5. Naudojant tik JavaScript:
 //  5.1. Pakeisti visų sostinių pavadinimo teksto spalvą.
+function task1() {
+  const capitalNames = document.querySelectorAll('.capital h2');
+  capitalNames.forEach(name => {
+    name.style.color = 'green';
+  })
+}
+
+task1();
+
+
 //  5.2. Pakeisti kas antro miesto fono spalvą.
+function task2() {
+  // const allCities = document.querySelectorAll('.city-item');
+
+  // allCities.forEach((city, index) => {
+  //   if (index % 2 === 0) {
+  //     city.style.backgroundColor = '#f0f0f0';
+  //   }
+  // })
+
+  const evenCities = document.querySelectorAll('.city-item:nth-of-type(even)');
+
+  evenCities.forEach(city => {
+    city.style.backgroundColor = '#f0f0f0';
+  })
+}
+
+task2();
+
 //  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
 //  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
 
@@ -148,7 +176,6 @@ function task6() {
   const cityItems = document.querySelectorAll('.city-item');
   
   cityItems.forEach((city) => {
-    console.log(city.style.color);
     city.style.width = '50%';
     city.style.border = '2px solid #555555';
     city.style.padding = '50px';
