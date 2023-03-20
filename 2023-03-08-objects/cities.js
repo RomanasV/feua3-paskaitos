@@ -93,28 +93,41 @@ let citiesList =  [
 
 
 function renderCities(cities) {
-  console.log(cities);
   const citiesListElement = document.querySelector('#cities');
 
   cities.forEach(city => {
-    console.log(city);
-    // console.log(city.name);
-    // console.log(city.population);
-    console.log(city.isCapital);
-  
-    // console.log(city.location);
-    // console.log(city.location.continent);
-    // console.log(city.location.country);
-  
-    console.log(city.touristAttractions);
-  
-    city.touristAttractions.map(attraction => {
-      console.log(attraction)
-    })
+    let capitalTitle = '';
+    let capitalText = '';
+    let capitalClass = '';
 
-    citiesListElement.innerHTML += `<div>
-                                      <h2>${city.name}</h2>
-                                      <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.</p>
+    if (city.isCapital) {
+      capitalTitle = ' (capital)';
+      capitalText = ` ${city.name} is the capital of ${city.location.country}.`;
+      capitalClass = ' capital';
+    }
+  
+    let touristAttractionsElement = '';
+
+    if (city.touristAttractions.length > 0) {
+      let touristAttractionItems = '';
+      let touristAttractionTitle = `Main Tourist attraction of ${city.name} is:`;
+      
+      city.touristAttractions.map(attraction => {
+        touristAttractionItems += '<li>' + attraction + '</li>';
+      })
+
+      if (city.touristAttractions.length > 1) {
+        touristAttractionTitle = `Main Tourist attractions of ${city.name} are:`;
+      }
+
+      touristAttractionsElement = `<h3>${touristAttractionTitle}</h3>
+                                   <ul>${touristAttractionItems}</ul>`;
+    }
+
+    citiesListElement.innerHTML += `<div class="city-item${capitalClass}">
+                                      <h2>${city.name}${capitalTitle}</h2>
+                                      <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.${capitalText}</p>
+                                      ${touristAttractionsElement}
                                     </div>`;
   });
 }
