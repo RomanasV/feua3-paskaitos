@@ -133,3 +133,28 @@ function renderCities(cities) {
 }
 
 renderCities(citiesList);
+
+
+// 5. Naudojant tik JavaScript:
+//  5.1. Pakeisti visų sostinių pavadinimo teksto spalvą.
+//  5.2. Pakeisti kas antro miesto fono spalvą.
+//  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
+//  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+
+// 6. Jeigu miestų skaičius nėra porinis, tai paskutinio miesto plotis turi būti 100%, o visų kitų - 50%.
+
+function task6() {
+  // const cityItems = document.getElementsByClassName('city-item');
+  const cityItems = document.querySelectorAll('.city-item');
+  
+  cityItems.forEach((city) => {
+    console.log(city.style.color);
+    city.style.width = '50%';
+    city.style.border = '2px solid #555555';
+    city.style.padding = '50px';
+    city.style.boxSizing = 'border-box'; 
+    city.style.marginBottom = '20px';
+  })
+}
+
+task6();
