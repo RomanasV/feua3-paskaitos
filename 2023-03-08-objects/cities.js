@@ -26,7 +26,7 @@ let citiesList =  [
       continent: 'North America',
       country: 'United States of America',
     },
-    touristAttractions: ['Metropolitan Museum', 'Central Park', 'Modern Art Museum'],
+    touristAttractions: ['Metropolitan Museum', 'Central Park', 'Modern Art Museum', 'Metropolitan Museum', 'Central Park', 'Modern Art Museum'],
     isCapital: false
   },
   {
@@ -36,7 +36,7 @@ let citiesList =  [
       continent: 'Asia',
       country: 'United Arab Emirates',
     },
-    touristAttractions: ['Burj Khalifa', 'Burj Al Arab', 'Dubai Mall'],
+    touristAttractions: ['Burj Khalifa', 'Burj Al Arab', 'Dubai Mall', 'Dubai Mall'],
     isCapital: false
   },
   {
@@ -168,6 +168,40 @@ task2();
 
 //  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
 //  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+
+function task3() {
+  // const firstLiElements = document.querySelectorAll('li:nth-of-type(1)');
+  // firstLiElements.forEach(li => {
+  //   li.style.color = 'green';
+  // })
+
+  // const lastLiElements = document.querySelectorAll('li:nth-of-type(1n+4)');
+  // lastLiElements.forEach(li => {
+  //   li.style.color = 'red';
+  // })
+
+  let ulElements = document.querySelectorAll('ul');
+
+  ulElements.forEach(ul => {
+    const liElements = ul.querySelectorAll('li');
+    
+    liElements.forEach((li, index) => {
+      let liColor = '';
+
+      if (index === 0) {
+        liColor = 'green';
+      } else if (index > 2) {
+        liColor = 'red';
+      } else {
+        liColor = 'blue';
+      }
+
+      li.style.color = liColor;
+    })
+  })
+}
+
+task3();
 
 // 6. Jeigu miestų skaičius nėra porinis, tai paskutinio miesto plotis turi būti 100%, o visų kitų - 50%.
 
