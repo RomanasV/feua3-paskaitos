@@ -79,3 +79,36 @@ switchButton.addEventListener('click', () => {
 // Patikrina ar HTML elementas turi nurodytą klasę (grąžina true arba false)
 console.log(newParagraph.classList.contains('pirma-klase'))
 console.log(newParagraph.classList.contains('pirma'))
+
+// Keičia (arba prideda) HTML elemento ID
+newParagraph.id = 'paragrafo-id';
+console.log(newParagraph.id);
+
+let link = document.createElement('a');
+link.textContent = 'nuodora';
+newParagraph.after(link);
+
+// link.href = 'https://www.google.com';
+// link.target = '_blank';
+// link.title = 'cia yra nuoroda';
+
+link.setAttribute('href', 'https://www.google.com');
+link.setAttribute('target', '_blank');
+link.setAttribute('title', 'cia yra nuoroda');
+link.setAttribute('class', 'nuorodos-klase');
+link.setAttribute('class', 'antra-nuorodos-klase');
+link.setAttribute('id', 'nuorodos-id');
+
+console.log(link.getAttribute('href'));
+console.log(link.href);
+
+link.removeAttribute('class');
+
+link.style.border = '1px solid black';
+link.style.padding = '5px 10px';
+link.style.fontSize = '20px';
+
+link.style = `color: red;
+              border: 1px solid black;
+              padding: 5px 10px;
+              font-size: 20px;`;
