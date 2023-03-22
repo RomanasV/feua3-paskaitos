@@ -20,7 +20,9 @@ const minus2Button = document.createElement('button');
 const plus2Button = document.createElement('button');
 const resetButton = document.createElement('button');
 
-numberDisplay.textContent = 5;
+let counterNumber = 5;
+
+numberDisplay.textContent = counterNumber;
 minus1Button.textContent = '-1';
 minus2Button.textContent = '-2';
 plus1Button.textContent = '+1';
@@ -39,42 +41,112 @@ numbers.append(
 );
 
 minus1Button.addEventListener('click', () => {
-  numberDisplay.textContent--;
+  counterNumber--;
+  numberDisplay.textContent = counterNumber;
 
-  if (numberDisplay.textContent <= 1) {
+  if (counterNumber <= 1) {
     minus1Button.setAttribute('disabled', true);
   }
+  
+  if (counterNumber <= 2) {
+    minus2Button.setAttribute('disabled', true);
+  }
 
-  if (numberDisplay.textContent < 10) {
+  if (counterNumber < 10) {
     plus1Button.removeAttribute('disabled');
   }
 
-  if (numberDisplay.textContent < 5) {
+  if (counterNumber < 9) {
+    plus2Button.removeAttribute('disabled');
+  }
+
+  if (counterNumber < 5) {
     numberDisplay.style.color = 'red';
   }
 })
 
 plus1Button.addEventListener('click', () => {
-  numberDisplay.textContent++;
+  counterNumber++;
+  numberDisplay.textContent = counterNumber;
 
-  if (numberDisplay.textContent >= 10) {
+  if (counterNumber >= 10) {
     plus1Button.setAttribute('disabled', true);
   }
 
-  if (numberDisplay.textContent > 1) {
+  if (counterNumber >= 9) {
+    plus2Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber > 1) {
     minus1Button.removeAttribute('disabled');
   }
 
-  if (numberDisplay.textContent >= 5) {
+  if (counterNumber > 2) {
+    minus2Button.removeAttribute('disabled');
+  }
+
+  if (counterNumber >= 5) {
+    numberDisplay.style.color = 'green';
+  }
+})
+
+minus2Button.addEventListener('click', () => {
+  // counterNumber = counterNumber - 2;
+  counterNumber -= 2;
+  numberDisplay.textContent = counterNumber;
+
+  if (counterNumber <= 1) {
+    minus1Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber <= 2) {
+    minus2Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber < 10) {
+    plus1Button.removeAttribute('disabled');
+  }
+  
+  if (counterNumber < 9) {
+    plus2Button.removeAttribute('disabled');
+  }
+
+  if (counterNumber < 5) {
+    numberDisplay.style.color = 'red';
+  }
+})
+
+plus2Button.addEventListener('click', () => {
+  counterNumber += 2;
+  numberDisplay.textContent = counterNumber;
+
+  if (counterNumber >= 10) {
+    plus1Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber >= 9) {
+    plus2Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber > 1) {
+    minus1Button.removeAttribute('disabled');
+  }
+
+  if (counterNumber > 2) {
+    minus2Button.removeAttribute('disabled');
+  }
+
+  if (counterNumber >= 5) {
     numberDisplay.style.color = 'green';
   }
 })
 
 resetButton.addEventListener('click', () => {
-  numberDisplay.textContent = 5;
+  counterNumber = 5;
+  numberDisplay.textContent = counterNumber;
   numberDisplay.style.color = 'green';
   minus1Button.removeAttribute('disabled');
   plus1Button.removeAttribute('disabled');
+  minus2Button.removeAttribute('disabled');
+  plus2Button.removeAttribute('disabled');
 })
-
-
