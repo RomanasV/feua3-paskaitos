@@ -49,7 +49,8 @@ plus2Button.textContent = '+2';
 plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
 input.type = 'number';
-input.value = initialNumber;
+input.max = 10;
+input.min = 1;
 
 gradesTitle.textContent = 'Balai:';
 gradeButton.textContent = 'Add Grade';
@@ -79,6 +80,18 @@ minus5Button.addEventListener('click', () => checkData(counterNumber - 5));
 plus5Button.addEventListener('click', () => checkData(counterNumber + 5));
 resetButton.addEventListener('click', () => checkData(initialNumber));
 
+input.addEventListener('input', () => {
+  const value = Number(input.value);
+
+  if (value < 0) {
+    input.value = 1;
+  } else if (value > 10) {
+    input.value = 10;
+  }
+  
+  checkData(input.value);
+});
+
 function checkColor() {
   let color = 'black';
   
@@ -96,7 +109,8 @@ function checkColor() {
 function checkData(newCounterNumber) {
   counterNumber = newCounterNumber;
   numberDisplay.textContent = counterNumber;
-
+  input.value = counterNumber;
+  
   if (counterNumber >= 10) {
     plus1Button.setAttribute('disabled', true);
   } else {
