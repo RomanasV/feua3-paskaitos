@@ -18,6 +18,8 @@ const minus1Button = document.createElement('button');
 const plus1Button = document.createElement('button');
 const minus2Button = document.createElement('button');
 const plus2Button = document.createElement('button');
+const minus5Button = document.createElement('button');
+const plus5Button = document.createElement('button');
 const resetButton = document.createElement('button');
 
 const initialNumber = 5;
@@ -26,16 +28,20 @@ let counterNumber;
 numberDisplay.textContent = counterNumber;
 minus1Button.textContent = '-1';
 minus2Button.textContent = '-2';
+minus5Button.textContent = '-5';
 plus1Button.textContent = '+1';
 plus2Button.textContent = '+2';
+plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
 
 numbers.append(
   numberDisplay, 
+  minus5Button, 
   minus2Button, 
   minus1Button, 
   plus1Button, 
   plus2Button, 
+  plus5Button, 
   resetButton
 );
 
@@ -45,6 +51,8 @@ minus1Button.addEventListener('click', () => checkData(counterNumber - 1));
 plus1Button.addEventListener('click', () => checkData(counterNumber + 1));
 minus2Button.addEventListener('click', () => checkData(counterNumber - 2));
 plus2Button.addEventListener('click', () => checkData(counterNumber + 2));
+minus5Button.addEventListener('click', () => checkData(counterNumber - 5));
+plus5Button.addEventListener('click', () => checkData(counterNumber + 5));
 resetButton.addEventListener('click', () => checkData(initialNumber));
 
 function checkColor() {
@@ -77,6 +85,12 @@ function checkData(newCounterNumber) {
     plus2Button.removeAttribute('disabled');
   }
 
+  if (counterNumber >= 6) {
+    plus5Button.setAttribute('disabled', true);
+  } else {
+    plus5Button.removeAttribute('disabled');
+  }
+
   if (counterNumber > 1) {
     minus1Button.removeAttribute('disabled');
   } else {
@@ -87,6 +101,12 @@ function checkData(newCounterNumber) {
     minus2Button.removeAttribute('disabled');
   } else {
     minus2Button.setAttribute('disabled', true);
+  }
+
+  if (counterNumber > 5) {
+    minus5Button.removeAttribute('disabled');
+  } else {
+    minus5Button.setAttribute('disabled', true);
   }
 
   checkColor();
