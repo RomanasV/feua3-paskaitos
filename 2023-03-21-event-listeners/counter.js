@@ -92,6 +92,11 @@ input.addEventListener('input', () => {
   checkData(input.value);
 });
 
+gradeButton.addEventListener('click', () => {
+  console.log(counterNumber)
+  console.log(gradesList)
+});
+
 function checkColor() {
   let color = 'black';
   
@@ -149,5 +154,4 @@ function checkData(newCounterNumber) {
 
   checkColor();
 }
-
 
