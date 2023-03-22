@@ -11,6 +11,17 @@
 // 9. Jeigu skaitmuo yra 5 arba daugiau, tai jo spalva turėtų būti žalia. Kitu atveju - raudona.
 // 10. Sukurti naują mygtuką „Reset". Jį paspaudus viskas atstatoma į pradinę padėtį.
 
+// 11. Sukurti input elementą (number tipo) ir jame įrašytą skaičių pridėti kaip h3 elemento tekstą.
+
+// 12. Sukurti du naujus mygtukus, kurie:
+// 12.1. Prideda dvejetą prie esamos h3 elemento reikšmės.
+// 12.2. Atima dvejetą iš esamos h3 elemento reikšmės.
+
+// 13. Sukurti naują elementą (h4) ir jį pridėti į „numbers" elemento pabaigą.
+// 13.1. Šio elemento tekstas turėtų būti „Balai:"
+// 14. Sukurti naują elementą (ul) ir jį pridėti į „numbers" elemento pabaigą.
+// 14.1. Sukurti naują mygtuką, kurio teksta būtų „Įrašyti balą".
+// 14.2. Paspaudus šį mygtuką, reikia paimti reikšmę iš h3 elemento ir sukurti naują li elementą bei jį prepend'inti prie ul elemento.
 
 const numbers = document.querySelector('#numbers');
 const numberDisplay = document.createElement('h3');
@@ -21,6 +32,10 @@ const plus2Button = document.createElement('button');
 const minus5Button = document.createElement('button');
 const plus5Button = document.createElement('button');
 const resetButton = document.createElement('button');
+const input = document.createElement('input');
+const gradesTitle = document.createElement('h4');
+const gradesList = document.createElement('ul');
+const gradeButton = document.createElement('button');
 
 const initialNumber = 5;
 let counterNumber;
@@ -33,16 +48,25 @@ plus1Button.textContent = '+1';
 plus2Button.textContent = '+2';
 plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
+input.type = 'number';
+input.value = initialNumber;
+
+gradesTitle.textContent = 'Balai:';
+gradeButton.textContent = 'Add Grade';
 
 numbers.append(
-  numberDisplay, 
+  numberDisplay,
+  input, 
   minus5Button, 
   minus2Button, 
   minus1Button, 
   plus1Button, 
   plus2Button, 
   plus5Button, 
-  resetButton
+  resetButton,
+  gradeButton,
+  gradesTitle,
+  gradesList
 );
 
 checkData(initialNumber);
