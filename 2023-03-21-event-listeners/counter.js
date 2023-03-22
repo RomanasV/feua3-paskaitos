@@ -20,7 +20,8 @@ const minus2Button = document.createElement('button');
 const plus2Button = document.createElement('button');
 const resetButton = document.createElement('button');
 
-let counterNumber = 5;
+const initialNumber = 5;
+let counterNumber;
 
 numberDisplay.textContent = counterNumber;
 minus1Button.textContent = '-1';
@@ -28,8 +29,6 @@ minus2Button.textContent = '-2';
 plus1Button.textContent = '+1';
 plus2Button.textContent = '+2';
 resetButton.textContent = 'Reset';
-
-numberDisplay.style.color = 'green';
 
 numbers.append(
   numberDisplay, 
@@ -40,113 +39,57 @@ numbers.append(
   resetButton
 );
 
-minus1Button.addEventListener('click', () => {
-  counterNumber--;
-  numberDisplay.textContent = counterNumber;
+checkData(initialNumber);
 
-  if (counterNumber <= 1) {
-    minus1Button.setAttribute('disabled', true);
-  }
+minus1Button.addEventListener('click', () => checkData(counterNumber - 1));
+plus1Button.addEventListener('click', () => checkData(counterNumber + 1));
+minus2Button.addEventListener('click', () => checkData(counterNumber - 2));
+plus2Button.addEventListener('click', () => checkData(counterNumber + 2));
+resetButton.addEventListener('click', () => checkData(initialNumber));
+
+function checkColor() {
+  let color = 'black';
   
-  if (counterNumber <= 2) {
-    minus2Button.setAttribute('disabled', true);
-  }
-
-  if (counterNumber < 10) {
-    plus1Button.removeAttribute('disabled');
-  }
-
-  if (counterNumber < 9) {
-    plus2Button.removeAttribute('disabled');
-  }
-
   if (counterNumber < 5) {
-    numberDisplay.style.color = 'red';
+    color = 'red';
+  } else if (counterNumber < 7) {
+    color = 'orange';
+  } else {
+    color = 'green';
   }
-})
 
-plus1Button.addEventListener('click', () => {
-  counterNumber++;
+  numberDisplay.style.color = color;
+}
+
+function checkData(newCounterNumber) {
+  counterNumber = newCounterNumber;
   numberDisplay.textContent = counterNumber;
 
   if (counterNumber >= 10) {
     plus1Button.setAttribute('disabled', true);
+  } else {
+    plus1Button.removeAttribute('disabled');
   }
 
   if (counterNumber >= 9) {
     plus2Button.setAttribute('disabled', true);
-  }
-
-  if (counterNumber > 1) {
-    minus1Button.removeAttribute('disabled');
-  }
-
-  if (counterNumber > 2) {
-    minus2Button.removeAttribute('disabled');
-  }
-
-  if (counterNumber >= 5) {
-    numberDisplay.style.color = 'green';
-  }
-})
-
-minus2Button.addEventListener('click', () => {
-  // counterNumber = counterNumber - 2;
-  counterNumber -= 2;
-  numberDisplay.textContent = counterNumber;
-
-  if (counterNumber <= 1) {
-    minus1Button.setAttribute('disabled', true);
-  }
-
-  if (counterNumber <= 2) {
-    minus2Button.setAttribute('disabled', true);
-  }
-
-  if (counterNumber < 10) {
-    plus1Button.removeAttribute('disabled');
-  }
-  
-  if (counterNumber < 9) {
+  } else {
     plus2Button.removeAttribute('disabled');
   }
 
-  if (counterNumber < 5) {
-    numberDisplay.style.color = 'red';
-  }
-})
-
-plus2Button.addEventListener('click', () => {
-  counterNumber += 2;
-  numberDisplay.textContent = counterNumber;
-
-  if (counterNumber >= 10) {
-    plus1Button.setAttribute('disabled', true);
-  }
-
-  if (counterNumber >= 9) {
-    plus2Button.setAttribute('disabled', true);
-  }
-
   if (counterNumber > 1) {
     minus1Button.removeAttribute('disabled');
+  } else {
+    minus1Button.setAttribute('disabled', true);
   }
 
   if (counterNumber > 2) {
     minus2Button.removeAttribute('disabled');
+  } else {
+    minus2Button.setAttribute('disabled', true);
   }
 
-  if (counterNumber >= 5) {
-    numberDisplay.style.color = 'green';
-  }
-})
+  checkColor();
+}
 
-resetButton.addEventListener('click', () => {
-  counterNumber = 5;
-  numberDisplay.textContent = counterNumber;
-  numberDisplay.style.color = 'green';
-  minus1Button.removeAttribute('disabled');
-  plus1Button.removeAttribute('disabled');
-  minus2Button.removeAttribute('disabled');
-  plus2Button.removeAttribute('disabled');
-})
+
