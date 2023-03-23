@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+  <form id="first-form">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter Your Name" minlength="2">
+    
+    <label for="Age"></label>
+    <input type="number" name="age" id="person-age" value="10" max="70" min="0" placeholder="Enter Your Age" step="5">
+
+
+    <input type="month" name="month" id="month">
+    
+    <input type="password" name="pass" id="password" placeholder="Enter your password">
+    
+    <input type="range" name="grade" id="grade" min="1" max="10" step="1" value="10">
+    
+    <input type="email" name="person-email" id="email" placeholder="Enter your email">
+    
+    <input type="color" name="best-color" id="color">
+
+    
+    <div>
+      <input type="radio" name="agree" id="agree-1" value="agree-value-1">
+      <label for="agree-1">Agree 1</label>
+    </div>
+    
+    <div>
+      <input type="radio" name="agree" id="agree-2" value="agree-value-2">
+      <label for="agree-2">Agree 2</label>
+    </div>
+    
+    <div>
+      <input type="radio" name="agree" id="agree-3" value="agree-value-3">
+      <label for="agree-3">Agree 3</label>
+    </div>
+
+    <input type="checkbox" name="check" id="check-1" value="check-value-1">
+    <label for="check-1">Check 1</label>
+    
+    <input type="checkbox" name="check" id="check-2" value="check-value-2">
+    <label for="check-2">Check 2</label>
+
+    <!-- <input type="submit" value="Submit"> -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
