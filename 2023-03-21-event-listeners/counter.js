@@ -93,8 +93,13 @@ input.addEventListener('input', () => {
 });
 
 gradeButton.addEventListener('click', () => {
-  console.log(counterNumber)
-  console.log(gradesList)
+  const gradeItem = document.createElement('li');
+  gradeItem.textContent = counterNumber;
+  gradeItem.style.color = numberDisplay.style.color;
+  gradesList.prepend(gradeItem);
+  checkData(initialNumber);
+
+  gradeItem.addEventListener('click', () => gradeItem.remove());
 });
 
 function checkColor() {
@@ -104,6 +109,8 @@ function checkColor() {
     color = 'red';
   } else if (counterNumber < 7) {
     color = 'orange';
+  } else if (counterNumber < 8) {
+    color = 'brown';
   } else {
     color = 'green';
   }
