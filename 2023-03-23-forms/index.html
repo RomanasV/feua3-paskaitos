@@ -7,7 +7,7 @@
   <title>Forms</title>
 </head>
 <body>
-  <form id="first-form">
+  <!-- <form id="first-form">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" placeholder="Enter Your Name" minlength="2">
     
@@ -47,8 +47,84 @@
     <input type="checkbox" name="check" id="check-2" value="check-value-2">
     <label for="check-2">Check 2</label>
 
-    <!-- <input type="submit" value="Submit"> -->
+    <input type="submit" value="Submit">
     <button type="submit">Submit</button>
+  </form> -->
+
+
+
+  <!-- 3. Kontaktų formoje turi būti šie laukeliai:
+  1. Tekstinis laukelis vardui (privalomas).
+  2. Tekstinis laukelis pavardei (privalomas).
+  3. Skaičiaus laukelis amžiui (privalomas).
+  4. Laukelis įvesti telefono numerį (neprivalomas).
+  5. Laukelis įvesti el. paštą (privalomas).
+  6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams.
+  7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo FEUA 1gr. iki FEUA 10gr.
+  8. Checkbox tipo input, kuriuose pateikta galimybę rinktis iš dominančių programavimo kalbų.
+  
+4. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
+
+  <form id="student-form">
+    <div class="form-control">
+      <label for="person-name">Name:</label>
+      <input type="text" name="name" id="person-name">
+    </div>
+
+    <div class="form-control">
+      <label for="person-surname">Surname:</label>
+      <input type="text" name="surname" id="person-surname" >
+    </div>
+
+    <div class="form-control">
+      <label for="person-surname">Age:</label>
+      <input type="number" name="age" id="person-age" >
+    </div>
+
+    <div class="form-control">
+      <label for="person-phone">Phone:</label>
+      <input type="tel" name="phone" id="person-phone">
+    </div>
+
+    <div class="form-control">
+      <label for="person-email">Email:</label>
+      <input type="email" name="email" id="person-email" >
+    </div>
+
+    <div class="form-control">
+      <label for="person-it-knowledge">IT Knowledge:</label>
+      <input type="range" name="it-knowledge" id="person-it-knowledge" >
+    </div>
+
+    <div>
+      <h3>Group:</h3>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-1" value="feua 1">
+        <label for="group-1">FEUA 1 gr.</label>
+      </div>
+      
+      <div class="form-control">
+        <input type="radio" name="group" id="group-2" value="feua 2">
+        <label for="group-2">FEUA 2 gr.</label>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Programming languages:</legend>
+
+      <div class="form-control">
+        <input type="checkbox" name="interests" id="interest-1" value="JavaScript">
+        <label for="interest-1">JavaScript</label>
+      </div>
+
+      <div class="form-control">
+        <input type="checkbox" name="interests" id="interest-2" value="PHP">
+        <label for="interest-2">PHP</label>
+      </div>
+    </fieldset>
+
+    <input type="submit" value="Create Student">
   </form>
 
   <script src="script.js"></script>
